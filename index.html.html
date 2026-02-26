@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フォーカスゴール — 星野舜</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --ink:#1a1a1a;--ink-2:#4a4a4a;--ink-3:#7a7a7a;--ink-4:#a0a0a0;--ink-5:#c8c8c8;
+  --surface:#ffffff;--surface-2:#f7f7f5;--surface-3:#efeeeb;
+  --green:#1a7a42;--green-light:#e8f5ec;--green-muted:#b5dfc4;
+  --amber:#b8860b;--amber-light:#fdf6e8;--amber-muted:#f0dfa0;
+  --red:#c44;--red-light:#fef0f0;
+  --purple:#6b5ec4;--purple-light:#f0edf8;
+  --radius:10px;--radius-lg:14px;
+  --font:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md:0 4px 12px rgba(0,0,0,0.06),0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg:0 12px 32px rgba(0,0,0,0.08),0 4px 8px rgba(0,0,0,0.04);
+}
+body{font-family:var(--font);background:var(--surface-2);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased;line-height:1.6;}
+.container{max-width:880px;margin:0 auto;padding:0 16px;}
+@media(min-width:768px){.container{padding:0 32px;}}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const {useState,useEffect,useCallback,useMemo,useRef} = React;
+
+const TREE = {
+  id:"root", level:0,
+  title:"星野舜 全体ゴール",
+  children:[
+    {
+      id:"b1", level:1, title:"Addness定常業務の健全性を全社で担保する",
+      children:[
+        {
+          id:"b1-1", level:2, title:"ゴール設定・分解を全員100%完了させる",
+          children:[
+            { id:"b1-1-1", level:3, title:"ゴール設定・ゴール分解（定常業務設定）を全員100%完了させる", setDate:"2026-01-30", status:"on_track" },
+            { id:"b1-1-2", level:3, title:"Addnessゴール設定＆Todo設定管理", setDate:"2026-02-05", status:"on_track" },
+          ]
+        },
+        {
+          id:"b1-2", level:2, title:"タスク提出率を安定させる",
+          children:[
+            { id:"b1-2-1", level:3, title:"提出タスクのAddness Todo化100%を達成する", setDate:"2026-01-30", status:"on_track" },
+            { id:"b1-2-2", level:3, title:"提出率75%以上を達成する", setDate:"2026-01-30", status:"on_track" },
+            { id:"b1-2-3", level:3, title:"日々のタスク提出管理", setDate:"2026-02-05", status:"on_track" },
+            { id:"b1-2-4", level:3, title:"【定常業務】タスク提出・Addness管理", setDate:"2026-02-05", status:"on_track" },
+          ]
+        },
+      ]
+    },
+    {
+      id:"b2", level:1, title:"定常業務 健全性ダッシュボード基盤を構築する",
+      children:[
+        {
+          id:"b2-g", level:2, title:"ダッシュボード構築・運用",
+          children:[
+            { id:"b2-1", level:3, title:"【構築PJ】ダッシュボード（GAS Web App）", setDate:"2026-02-12", status:"on_track" },
+            { id:"b2-2", level:3, title:"Web App改修：表示バグ修正＋視覚改善＋月セレクタ", setDate:"2026-02-12", status:"on_track" },
+            { id:"b2-3", level:3, title:"【構築PJ】過去月データ取得の自動化", setDate:"2026-02-12", status:"on_track" },
+          ]
+        },
+        {
+          id:"b2-h", level:2, title:"外部連携・運用フロー整備",
+          children:[
+            { id:"b2-4", level:3, title:"【構築PJ】Looker Studio統合", setDate:"2026-02-12", status:"on_track" },
+            { id:"b2-5", level:3, title:"【構築PJ】月次運用フロー確定", setDate:"2026-02-12", status:"on_track" },
+            { id:"b2-6", level:3, title:"【構築PJ】URLなしメンバー対応", setDate:"2026-02-12", status:"on_track" },
+          ]
+        },
+      ]
+    },
+    {
+      id:"b3", level:1, title:"「星野舜」全体の定常業務(仕組み)の健全性担保",
+      children:[
+        {
+          id:"b3-1", level:2, title:"経理・入金処理を漏れなく回す",
+          children:[
+            { id:"b3-1-1", level:3, title:"契約データの取込（1,8,15,22）", setDate:"2026-02-05", status:"on_track" },
+            { id:"b3-1-2", level:3, title:"MOSH入金データ取込とその後の処理（1,16）", setDate:"2026-02-05", status:"on_track" },
+            { id:"b3-1-3", level:3, title:"CBS入金データ取込（10,20,30）", setDate:"2026-02-05", status:"on_track" },
+            { id:"b3-1-4", level:3, title:"日本プラム入金データ取込(5,10,15,20,25,30)", setDate:"2026-02-05", status:"on_track" },
+            { id:"b3-1-5", level:3, title:"【定常業務】売掛金管理", setDate:"2026-02-05", status:"on_track" },
+          ]
+        },
+        {
+          id:"b3-2", level:2, title:"マスターデータ整備",
+          children:[
+            { id:"b3-2-1", level:3, title:"取引先のマスターデータを作る", setDate:"2026-01-07", status:"warning", alert:"長期停滞" },
+          ]
+        },
+        {
+          id:"b3-3g", level:2, title:"管理ツール・ルール策定",
+          children:[
+            { id:"b3-3", level:3, title:"色分けルール決め", setDate:"2026-01-26", status:"on_track" },
+            { id:"b3-4", level:3, title:"個人管理_2026年シート", setDate:"2026-01-29", status:"on_track" },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+const GOALS=[
+  { id:1,title:"ゴール設定・ゴール分解（定常業務設定）を全員100%完了させる",setDate:"2026-01-30",status:"on_track",alert:"",path:["Addness定常業務の健全性を全社で担保する","ゴール設定・分解を全員100%完了させる"]},
+  { id:2,title:"提出タスクのAddness Todo化100%を達成する",setDate:"2026-01-30",status:"on_track",alert:"",path:["Addness定常業務の健全性を全社で担保する","タスク提出率を安定させる"]},
+  { id:3,title:"提出率75%以上を達成する",setDate:"2026-01-30",status:"on_track",alert:"",path:["Addness定常業務の健全性を全社で担保する","タスク提出率を安定させる"]},
+  { id:4,title:"Web App改修：表示バグ修正＋視覚改善＋月セレクタ",setDate:"2026-02-12",status:"on_track",alert:"",path:["健全性ダッシュボード基盤を構築する","ダッシュボード構築・運用"]},
+  { id:5,title:"【構築PJ】ダッシュボード（GAS Web App）",setDate:"2026-02-12",status:"on_track",alert:"",path:["健全性ダッシュボード基盤を構築する","ダッシュボード構築・運用"]},
+  { id:6,title:"【構築PJ】過去月データ取得の自動化",setDate:"2026-02-12",status:"on_track",alert:"",path:["健全性ダッシュボード基盤を構築する","ダッシュボード構築・運用"]},
+  { id:7,title:"【構築PJ】Looker Studio統合",setDate:"2026-02-12",status:"on_track",alert:"",path:["健全性ダッシュボード基盤を構築する","外部連携・運用フロー整備"]},
+  { id:8,title:"【構築PJ】月次運用フロー確定",setDate:"2026-02-12",status:"on_track",alert:"",path:["健全性ダッシュボード基盤を構築する","外部連携・運用フロー整備"]},
+  { id:9,title:"【構築PJ】URLなしメンバー対応",setDate:"2026-02-12",status:"on_track",alert:"",path:["健全性ダッシュボード基盤を構築する","外部連携・運用フロー整備"]},
+  { id:10,title:"【構築PJ】定常業務 健全性ダッシュボード基盤を構築する",setDate:"2026-02-12",status:"on_track",alert:"",path:["健全性ダッシュボード基盤を構築する"]},
+  { id:11,title:"取引先のマスターデータを作る",setDate:"2026-01-07",status:"warning",alert:"長期停滞の可能性",path:["全体の定常業務の健全性担保","マスターデータ整備"]},
+  { id:12,title:"「星野舜」全体の定常業務(仕組み)の健全性担保",setDate:"2026-01-23",status:"on_track",alert:"",path:["全体の定常業務の健全性担保"]},
+  { id:13,title:"日々のタスク提出管理",setDate:"2026-02-05",status:"on_track",alert:"",path:["Addness定常業務の健全性を全社で担保する","タスク提出率を安定させる"]},
+  { id:14,title:"契約データの取込（1,8,15,22）",setDate:"2026-02-05",status:"on_track",alert:"",path:["全体の定常業務の健全性担保","経理・入金処理を漏れなく回す"]},
+  { id:15,title:"Addnessゴール設定＆Todo設定管理",setDate:"2026-02-05",status:"on_track",alert:"",path:["Addness定常業務の健全性を全社で担保する","ゴール設定・分解を全員100%完了させる"]},
+  { id:16,title:"MOSH入金データ取込とその後の処理（1,16）",setDate:"2026-02-05",status:"on_track",alert:"",path:["全体の定常業務の健全性担保","経理・入金処理を漏れなく回す"]},
+  { id:17,title:"【定常業務】売掛金管理",setDate:"2026-02-05",status:"on_track",alert:"",path:["全体の定常業務の健全性担保","経理・入金処理を漏れなく回す"]},
+  { id:18,title:"【定常業務】タスク提出・Addness管理",setDate:"2026-02-05",status:"on_track",alert:"",path:["Addness定常業務の健全性を全社で担保する","タスク提出率を安定させる"]},
+  { id:19,title:"色分けルール決め",setDate:"2026-01-26",status:"on_track",alert:"",path:["全体の定常業務の健全性担保","管理ツール・ルール策定"]},
+  { id:20,title:"個人管理_2026年シート",setDate:"2026-01-29",status:"on_track",alert:"",path:["全体の定常業務の健全性担保","管理ツール・ルール策定"]},
+];
+
+function countLeaves(node){
+  if(!node.children||!node.children.length) return 1;
+  return node.children.reduce((s,c)=>s+countLeaves(c),0);
+}
+function calcDays(d){ return d ? Math.ceil((new Date("2026-02-25")-new Date(d))/86400000) : 0; }
+
+/* ─────── Icons (inline SVG) ─────── */
+const Icon = {
+  chevron: (props) => <svg width="12" height="12" viewBox="0 0 12 12" fill="none" {...props}><path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  check: (props) => <svg width="14" height="14" viewBox="0 0 14 14" fill="none" {...props}><path d="M3 7.5L5.5 10L11 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  route: (props) => <svg width="14" height="14" viewBox="0 0 14 14" fill="none" {...props}><circle cx="7" cy="3" r="1.5" stroke="currentColor" strokeWidth="1.3"/><circle cx="7" cy="11" r="1.5" stroke="currentColor" strokeWidth="1.3"/><path d="M7 4.5V9.5" stroke="currentColor" strokeWidth="1.3" strokeDasharray="2 1.5"/></svg>,
+  close: (props) => <svg width="16" height="16" viewBox="0 0 16 16" fill="none" {...props}><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+  alert: (props) => <svg width="13" height="13" viewBox="0 0 13 13" fill="none" {...props}><path d="M6.5 1L12 11.5H1L6.5 1Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/><path d="M6.5 5V7.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/><circle cx="6.5" cy="9.2" r="0.6" fill="currentColor"/></svg>,
+  external: (props) => <svg width="12" height="12" viewBox="0 0 12 12" fill="none" {...props}><path d="M9 3L4.5 7.5M9 3H6M9 3V6" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><path d="M9 8V9.5A1.5 1.5 0 017.5 11H2.5A1.5 1.5 0 011 9.5V4.5A1.5 1.5 0 012.5 3H4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/></svg>,
+};
+
+const LEVEL_META = [
+  { label:"ルート", tag:"ROOT", color:"var(--green)" },
+  { label:"大目標", tag:"L1", color:"#2563eb" },
+  { label:"中間目標", tag:"L2", color:"var(--amber)" },
+  { label:"フォーカスゴール", tag:"L3", color:"var(--green)" },
+];
+
+/* ─────── ツリーノード ─────── */
+function TreeNode({node, depth=0, isLast=false}){
+  const [open, setOpen] = useState(depth < 2);
+  const hasKids = node.children && node.children.length > 0;
+  const isLeaf = !hasKids;
+  const level = node.level || depth;
+  const meta = LEVEL_META[Math.min(level,3)];
+  const days = calcDays(node.setDate);
+  const leafCount = hasKids ? countLeaves(node) : 0;
+  const isWarn = node.status==="warning"||node.alert;
+
+  return (
+    <div className="t-item">
+      <div className="t-rail">
+        <div className="t-dot" style={{
+          background: isWarn ? 'var(--amber)' : isLeaf ? 'var(--green)' : meta.color,
+          boxShadow: isWarn ? '0 0 0 3px var(--amber-light)' : isLeaf ? '0 0 0 3px var(--green-light)' : 'none'
+        }}/>
+        {!isLast && <div className="t-line"/>}
+      </div>
+      <div className="t-body">
+        <div
+          className={"t-card" + (hasKids?" t-card--parent":"") + (isLeaf?" t-card--leaf":"") + (isWarn?" t-card--warn":"")}
+          onClick={hasKids?()=>setOpen(!open):undefined}
+        >
+          <div className="t-card-top">
+            <span className="t-tag" style={{
+              background: isWarn ? 'var(--amber-light)' : level===1 ? '#eff4ff' : level===2 ? 'var(--amber-light)' : 'var(--green-light)',
+              color: isWarn ? 'var(--amber)' : meta.color
+            }}>{meta.tag}</span>
+            <span className="t-title">{node.title}</span>
+            <div className="t-card-right">
+              {node.alert && <span className="t-alert"><Icon.alert style={{color:'var(--amber)'}}/> {node.alert}</span>}
+              {isLeaf && <span className="t-days" style={{color:days>40?'var(--red)':days>25?'var(--amber)':'var(--ink-3)'}}>{days}日</span>}
+              {hasKids && <span className="t-count">{leafCount}</span>}
+              {hasKids && <span className={"t-arrow"+(open?" t-arrow--open":"")}><Icon.chevron/></span>}
+            </div>
+          </div>
+          {isLeaf && node.setDate && (
+            <div className="t-card-bottom">
+              <span className="t-meta">設定 {node.setDate.slice(5).replace('-','/')}</span>
+              <div className="t-bar">
+                <div className="t-bar-fill" style={{
+                  width:Math.min(100, Math.max(8, days*2))+"%",
+                  background: isWarn ? 'var(--amber)' : days>40 ? 'var(--red)' : 'var(--green)',
+                }}/>
+              </div>
+            </div>
+          )}
+        </div>
+        {hasKids && open && (
+          <div className="t-children">
+            {node.children.map((child,i)=>(
+              <TreeNode key={child.id} node={child} depth={depth+1} isLast={i===node.children.length-1}/>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/* ─────── パスポップアップ ─────── */
+function PathPopup({show,title,path,onClose}){
+  if(!show) return null;
+  const levels = [
+    { label:"L1 大目標", color:"#2563eb", bg:"#eff4ff" },
+    { label:"L2 中間目標", color:"var(--amber)", bg:"var(--amber-light)" },
+  ];
+  return (
+    <div className="overlay" onClick={onClose}>
+      <div className="modal" onClick={e=>e.stopPropagation()}>
+        <div className="modal-head">
+          <div>
+            <div className="modal-title">ゴールパス</div>
+            <div className="modal-sub">上位ゴールからフォーカスゴールまでの経路</div>
+          </div>
+          <button className="modal-close" onClick={onClose}><Icon.close/></button>
+        </div>
+        <div className="path-list">
+          {(path||[]).map((p,i)=>(
+            <div key={i} className="path-item">
+              <div className="path-rail">
+                <div className="path-dot" style={{background:levels[i]?.color||'var(--amber)'}}/>
+                <div className="path-line"/>
+              </div>
+              <div className="path-body">
+                <span className="path-label" style={{color:levels[i]?.color||'var(--amber)'}}>{levels[i]?.label||'L2'}</span>
+                <span className="path-text">{p}</span>
+              </div>
+            </div>
+          ))}
+          <div className="path-item">
+            <div className="path-rail">
+              <div className="path-dot" style={{background:'var(--green)'}}/>
+            </div>
+            <div className="path-body path-body--leaf">
+              <span className="path-label" style={{color:'var(--green)'}}>L3 フォーカスゴール</span>
+              <span className="path-text">{title}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ─────── ゴールカード ─────── */
+function GoalCard({goal,onConfirm,onPath,delay=0}){
+  const [vis,setVis]=useState(false);
+  useEffect(()=>{const t=setTimeout(()=>setVis(true),delay);return()=>clearTimeout(t);},[delay]);
+  const isWarn = goal.status==="warning"||goal.alert;
+  const days = calcDays(goal.setDate);
+
+  return (
+    <div className={"g-card"+(isWarn?" g-card--warn":"")} style={{
+      opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(8px)",transition:"opacity 0.4s ease, transform 0.4s ease",
+    }}>
+      <div className="g-top">
+        <div className="g-info">
+          <div className="g-title">{goal.title}</div>
+          {goal.alert && <div className="g-alert"><Icon.alert style={{width:11,height:11}}/> {goal.alert}</div>}
+          <div className="g-meta">
+            <span>設定 {goal.setDate.slice(5).replace('-','/')}</span>
+            <span className="g-meta-sep">·</span>
+            <span style={{color:days>40?'var(--red)':days>25?'var(--amber)':'var(--ink-3)'}}>{days}日経過</span>
+          </div>
+        </div>
+        <div className="g-days-ring" style={{borderColor: isWarn ? 'var(--amber-muted)' : days>40 ? '#f5c4c4' : 'var(--green-muted)'}}>
+          <span className="g-days-num" style={{color: isWarn ? 'var(--amber)' : days>40 ? 'var(--red)' : 'var(--green)'}}>{days}</span>
+          <span className="g-days-unit">日</span>
+        </div>
+      </div>
+      <div className="g-bar">
+        <div className="g-bar-fill" style={{
+          width:Math.min(100,Math.max(8,days*2))+"%",
+          background: isWarn ? 'var(--amber)' : days>40 ? 'var(--red)' : 'var(--green)',
+        }}/>
+      </div>
+      <div className="g-actions">
+        <button className="g-btn g-btn--path" onClick={()=>onPath(goal)}>
+          <Icon.route/> パス照会
+        </button>
+        {isWarn && (
+          <button className={"g-btn g-btn--ack"+(goal.confirmed?" g-btn--acked":"")} onClick={()=>onConfirm(goal.id)}>
+            <Icon.check/> {goal.confirmed?"確認済み":"確認する"}
+          </button>
+        )}
+        <button className="g-btn g-btn--detail">
+          詳細 <Icon.external/>
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ─────── LINE Phone Mockup ─────── */
+function LINEPhone({children}){
+  return (
+    <div className="phone-wrap">
+      <div className="phone-frame">
+        {/* ── ステータスバー ── */}
+        <div className="phone-status">
+          <span className="phone-time">9:50</span>
+          <div className="phone-island"/>
+          <div className="phone-status-right">
+            <svg width="15" height="11" viewBox="0 0 15 11"><path d="M1 8h1.5v3H1zM4 5.5h1.5v5.5H4zM7 3h1.5v8H7zM10 .5h1.5V11H10z" fill="currentColor"/></svg>
+            <svg width="14" height="11" viewBox="0 0 14 11"><path d="M.5 7.5a6 6 0 0110.5 0" fill="none" stroke="currentColor" strokeWidth="1.2"/><path d="M2.5 9a3.5 3.5 0 016.5 0" fill="none" stroke="currentColor" strokeWidth="1.2"/><circle cx="5.75" cy="10" r="1" fill="currentColor"/></svg>
+            <div className="phone-battery"><div className="phone-battery-fill"/></div>
+          </div>
+        </div>
+        {/* ── LINEヘッダー ── */}
+        <div className="line-nav">
+          <div className="line-nav-left">
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none"><path d="M8.5 1.5L2 8l6.5 6.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </div>
+          <div className="line-nav-center">
+            <div className="line-nav-name">フォーカスゴール通知</div>
+          </div>
+          <div className="line-nav-right">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M15 9.5H3M15 5H3M15 14H3" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/></svg>
+          </div>
+        </div>
+        {/* ── チャットエリア ── */}
+        <div className="line-chat">
+          <div className="line-date-pill">2026年2月25日（火）</div>
+          <div className="line-msg-row">
+            <div className="line-avatar-circle">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 14.5c0-3 3-5 7-5s7 2 7 5" stroke="#fff" strokeWidth="1.2"/><circle cx="8" cy="5" r="3.5" stroke="#fff" strokeWidth="1.2"/></svg>
+            </div>
+            <div className="line-msg-col">
+              <div className="line-sender">ゴール通知Bot</div>
+              <div className="line-bubble-wrap">
+                <div className="line-bubble-body">{children}</div>
+                <div className="line-read-time">
+                  <span className="line-read">既読</span>
+                  <span>9:50</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* ── 入力バー ── */}
+        <div className="line-input-bar">
+          <div className="line-input-plus">+</div>
+          <div className="line-input-field">メッセージを入力</div>
+          <div className="line-input-mic">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5.5" y="1" width="5" height="8" rx="2.5" stroke="#999" strokeWidth="1.2"/><path d="M3 7.5a5 5 0 0010 0M8 13v2" stroke="#999" strokeWidth="1.2" strokeLinecap="round"/></svg>
+          </div>
+        </div>
+        {/* ── ホームバー ── */}
+        <div className="phone-home-bar"><div className="phone-home-indicator"/></div>
+      </div>
+    </div>
+  );
+}
+
+/* ─────── メインApp ─────── */
+function App(){
+  const [tab,setTab]=useState("home");
+  const [goals,setGoals]=useState(GOALS);
+  const [pathGoal,setPathGoal]=useState(null);
+  const handleConfirm=useCallback(id=>{setGoals(p=>p.map(g=>g.id===id?{...g,confirmed:!g.confirmed}:g));},[]);
+  const leafCount=useMemo(()=>countLeaves(TREE),[]);
+  const alertCount=useMemo(()=>goals.filter(g=>g.alert).length,[goals]);
+
+  const tabs=[
+    {id:"home",label:"今日のゴール"},
+    {id:"tree",label:"ゴールツリー"},
+    {id:"line",label:"LINE通知"},
+  ];
+
+  return (
+    <div className="app">
+      <PathPopup show={pathGoal!==null} title={pathGoal?pathGoal.title:""} path={pathGoal?pathGoal.path:[]} onClose={()=>setPathGoal(null)}/>
+
+      <header className="header">
+        <div className="container header-inner">
+          <div className="header-left">
+            <div className="header-logo">
+              <div className="header-logo-mark">S</div>
+              <div>
+                <div className="header-name">星野舜</div>
+                <div className="header-dept">コーポレート</div>
+              </div>
+            </div>
+          </div>
+          <div className="header-right">
+            <div className="header-stat">
+              <span className="header-stat-num">{leafCount}</span>
+              <span className="header-stat-label">フォーカスゴール</span>
+            </div>
+            <div className="header-stat-divider"/>
+            <div className="header-stat">
+              <span className="header-stat-num" style={{color:alertCount>0?'var(--amber)':'var(--green)'}}>{alertCount}</span>
+              <span className="header-stat-label">要注意</span>
+            </div>
+            <div className="header-date">2026.02.25 Tue</div>
+          </div>
+        </div>
+      </header>
+
+      <nav className="nav">
+        <div className="container nav-inner">
+          {tabs.map(t=>(
+            <button key={t.id} className={"nav-btn"+(tab===t.id?" nav-btn--active":"")} onClick={()=>setTab(t.id)}>
+              {t.label}
+            </button>
+          ))}
+        </div>
+      </nav>
+
+      <main className="main"><div className="container">
+
+        {tab==="home"&&(
+          <div className="page fade-in">
+            <div className="insight-card">
+              <div className="insight-head">
+                <div className="insight-icon">!</div>
+                <span className="insight-title">注目ポイント</span>
+              </div>
+              <p className="insight-body">
+                1/7設定の「<strong style={{color:'var(--amber)'}}>取引先のマスターデータを作る</strong>」が49日経過で停滞しています。今日30分だけでもデータ項目の洗い出しに着手してみましょう。
+              </p>
+            </div>
+            <div className="goal-list">
+              {goals.map((g,i)=><GoalCard key={g.id} goal={g} onConfirm={handleConfirm} onPath={gl=>setPathGoal(gl)} delay={i*50+80}/>)}
+            </div>
+          </div>
+        )}
+
+        {tab==="tree"&&(
+          <div className="page fade-in">
+            <div className="tree-legend">
+              {LEVEL_META.map((m,i)=>(
+                <span key={i} className="legend-chip">
+                  <span className="legend-dot" style={{background:m.color}}/>{m.tag}
+                </span>
+              ))}
+              <span className="legend-chip">
+                <span className="legend-dot" style={{background:'var(--amber)'}}/> 注意
+              </span>
+            </div>
+            <div className="tree-root">
+              <div className="tree-root-inner">
+                <span className="t-tag" style={{background:'var(--green-light)',color:'var(--green)'}}>ROOT</span>
+                <span className="tree-root-title">星野舜 全体ゴール</span>
+                <span className="tree-root-sub">3本柱 → フォーカス{leafCount}件</span>
+              </div>
+            </div>
+            <div className="tree-container">
+              {TREE.children.map((child,i)=>(
+                <TreeNode key={child.id} node={child} depth={1} isLast={i===TREE.children.length-1}/>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {tab==="line"&&(
+          <div className="page fade-in">
+            <p style={{textAlign:'center',color:'var(--ink-3)',fontSize:13,marginBottom:20}}>毎朝 9:50 にプッシュ通知で届くイメージ</p>
+            <LINEPhone>
+              <div className="lb-head">今日のフォーカスゴール（{goals.length}件）</div>
+              <div className="lb-greet">おはようございます、星野さん</div>
+              {goals.slice(0,4).map((g,i)=>{
+                const isW=g.status==="warning"||g.alert;
+                return(
+                  <div key={i} className={"lb-item"+(isW?" lb-item--warn":"")}>
+                    <div className="lb-item-title">{g.title}</div>
+                    <div className="lb-item-meta">
+                      設定 {g.setDate.slice(5).replace('-','/')}
+                      {g.alert&&<span className="lb-item-alert"> · {g.alert}</span>}
+                    </div>
+                  </div>
+                );
+              })}
+              {goals.length>4&&<div className="lb-more">他 {goals.length-4}件</div>}
+              <div className="lb-suggest">
+                <div className="lb-suggest-label">注目ポイント</div>
+                <div className="lb-suggest-text">「取引先マスターデータ」が49日停滞。今日30分データ項目の洗い出しを。</div>
+              </div>
+              <div className="lb-btns">
+                <div className="lb-btn">パス照会</div>
+                <div className="lb-btn">確認済み</div>
+                <div className="lb-btn lb-btn--primary">詳細 →</div>
+              </div>
+            </LINEPhone>
+          </div>
+        )}
+
+      </div></main>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+
+<style>
+/* ═══════════════════════════════════════
+   Header
+   ═══════════════════════════════════════ */
+.header{
+  background:var(--surface);
+  border-bottom:1px solid var(--surface-3);
+  padding:14px 0;
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
+}
+.header-left{display:flex;align-items:center;gap:14px;}
+.header-logo{display:flex;align-items:center;gap:10px;}
+.header-logo-mark{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,#1a7a42,#2d9a56);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:15px;letter-spacing:-0.5px;
+}
+.header-name{font-size:15px;font-weight:800;color:var(--ink);line-height:1.2;}
+.header-dept{font-size:11px;color:var(--ink-3);font-weight:400;}
+.header-right{display:flex;align-items:center;gap:14px;}
+.header-stat{display:flex;flex-direction:column;align-items:center;}
+.header-stat-num{font-size:20px;font-weight:900;color:var(--ink);line-height:1;}
+.header-stat-label{font-size:9px;color:var(--ink-4);font-weight:500;margin-top:2px;}
+.header-stat-divider{width:1px;height:24px;background:var(--surface-3);}
+.header-date{font-size:11px;color:var(--ink-4);font-weight:400;font-variant-numeric:tabular-nums;}
+@media(min-width:768px){
+  .header{padding:18px 0;}
+  .header-logo-mark{width:40px;height:40px;font-size:17px;}
+  .header-name{font-size:17px;}
+  .header-stat-num{font-size:24px;}
+}
+
+/* ═══════════════════════════════════════
+   Navigation
+   ═══════════════════════════════════════ */
+.nav{
+  background:var(--surface);
+  border-bottom:1px solid var(--surface-3);
+  position:sticky;top:0;z-index:50;
+}
+.nav-inner{display:flex;gap:0;}
+.nav-btn{
+  flex:1;padding:11px 0;border:none;background:transparent;
+  font-family:var(--font);font-size:13px;font-weight:500;color:var(--ink-4);
+  cursor:pointer;position:relative;transition:color 0.2s;
+  border-bottom:2px solid transparent;
+}
+.nav-btn:hover{color:var(--ink-2);}
+.nav-btn--active{
+  color:var(--ink);font-weight:700;
+  border-bottom-color:var(--green);
+}
+@media(min-width:768px){.nav-btn{font-size:14px;padding:14px 0;}}
+
+/* ═══════════════════════════════════════
+   Main
+   ═══════════════════════════════════════ */
+.main{padding:20px 0 60px;}
+@media(min-width:768px){.main{padding:28px 0 80px;}}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeIn 0.3s ease forwards;}
+
+/* ═══════════════════════════════════════
+   Insight Card (replaces "AIサジェスト")
+   ═══════════════════════════════════════ */
+.insight-card{
+  background:var(--surface);border:1px solid var(--surface-3);
+  border-radius:var(--radius-lg);padding:16px 18px;margin-bottom:20px;
+  box-shadow:var(--shadow-sm);
+}
+.insight-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.insight-icon{
+  width:20px;height:20px;border-radius:6px;
+  background:var(--amber-light);color:var(--amber);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:900;flex-shrink:0;
+}
+.insight-title{font-size:12px;font-weight:700;color:var(--ink-2);}
+.insight-body{font-size:13px;color:var(--ink-2);line-height:1.7;}
+@media(min-width:768px){
+  .insight-card{padding:20px 24px;margin-bottom:24px;}
+  .insight-body{font-size:14px;}
+}
+
+/* ═══════════════════════════════════════
+   Goal Cards
+   ═══════════════════════════════════════ */
+.goal-list{display:flex;flex-direction:column;gap:10px;}
+@media(min-width:768px){.goal-list{gap:12px;}}
+
+.g-card{
+  background:var(--surface);border:1px solid var(--surface-3);
+  border-radius:var(--radius-lg);padding:16px 18px;
+  box-shadow:var(--shadow-sm);transition:box-shadow 0.2s;
+}
+.g-card:hover{box-shadow:var(--shadow-md);}
+.g-card--warn{border-left:3px solid var(--amber);}
+
+.g-top{display:flex;align-items:flex-start;gap:14px;}
+.g-info{flex:1;min-width:0;}
+.g-title{font-size:13px;font-weight:600;color:var(--ink);line-height:1.5;margin-bottom:4px;}
+.g-alert{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:10px;color:var(--amber);font-weight:600;margin-bottom:4px;
+}
+.g-meta{font-size:11px;color:var(--ink-3);display:flex;align-items:center;gap:0;}
+.g-meta-sep{margin:0 6px;color:var(--ink-5);}
+
+.g-days-ring{
+  width:44px;height:44px;border-radius:50%;border:2.5px solid;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;
+}
+.g-days-num{font-size:16px;font-weight:900;line-height:1;}
+.g-days-unit{font-size:8px;color:var(--ink-4);font-weight:500;}
+
+.g-bar{
+  height:3px;background:var(--surface-3);border-radius:2px;margin:12px 0;overflow:hidden;
+}
+.g-bar-fill{height:100%;border-radius:2px;transition:width 0.6s ease;}
+
+.g-actions{display:flex;gap:6px;}
+.g-btn{
+  padding:7px 12px;border-radius:8px;border:1px solid var(--surface-3);
+  background:var(--surface);color:var(--ink-2);font-size:11px;font-weight:600;
+  cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:4px;
+  transition:all 0.15s;white-space:nowrap;
+}
+.g-btn:hover{background:var(--surface-2);border-color:var(--ink-5);}
+.g-btn--path{color:var(--ink-3);}
+.g-btn--ack{background:var(--amber-light);border-color:var(--amber-muted);color:var(--amber);}
+.g-btn--ack:hover{background:#f5edd0;}
+.g-btn--acked{background:var(--green-light);border-color:var(--green-muted);color:var(--green);}
+.g-btn--detail{margin-left:auto;color:var(--ink-3);}
+
+@media(min-width:768px){
+  .g-card{padding:20px 24px;}
+  .g-title{font-size:14px;}
+  .g-days-ring{width:48px;height:48px;}
+  .g-days-num{font-size:18px;}
+  .g-btn{font-size:12px;padding:8px 14px;}
+}
+
+/* ═══════════════════════════════════════
+   Tree
+   ═══════════════════════════════════════ */
+.tree-legend{
+  display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px;
+}
+.legend-chip{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:11px;color:var(--ink-3);font-weight:500;
+  padding:4px 10px;border-radius:20px;background:var(--surface);
+  border:1px solid var(--surface-3);
+}
+.legend-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+.tree-root{
+  background:var(--surface);border:1px solid var(--surface-3);
+  border-radius:var(--radius-lg);padding:14px 18px;margin-bottom:16px;
+  box-shadow:var(--shadow-sm);
+}
+.tree-root-inner{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.tree-root-title{font-size:14px;font-weight:800;color:var(--ink);}
+.tree-root-sub{font-size:11px;color:var(--ink-4);margin-left:auto;}
+
+.tree-container{padding-left:4px;}
+
+.t-item{display:flex;gap:0;}
+.t-rail{display:flex;flex-direction:column;align-items:center;width:20px;flex-shrink:0;padding-top:0;}
+.t-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:16px;}
+.t-line{flex:1;width:1.5px;background:var(--surface-3);margin:2px 0;}
+
+.t-body{flex:1;min-width:0;padding-bottom:8px;}
+
+.t-card{
+  background:var(--surface);border:1px solid var(--surface-3);
+  border-radius:var(--radius);padding:10px 14px;margin-left:6px;
+  transition:box-shadow 0.15s,border-color 0.15s;
+}
+.t-card--parent{cursor:pointer;}
+.t-card--parent:hover{box-shadow:var(--shadow-sm);border-color:var(--ink-5);}
+.t-card--warn{border-left:3px solid var(--amber);background:var(--amber-light);}
+
+.t-card-top{display:flex;align-items:center;gap:6px;}
+.t-tag{
+  font-size:9px;font-weight:800;padding:2px 7px;border-radius:6px;
+  white-space:nowrap;flex-shrink:0;letter-spacing:0.3px;
+}
+.t-title{font-size:12px;font-weight:600;color:var(--ink);flex:1;min-width:0;line-height:1.5;}
+.t-card--leaf .t-title{font-weight:400;color:var(--ink-2);}
+
+.t-card-right{display:flex;align-items:center;gap:6px;flex-shrink:0;}
+.t-alert{display:flex;align-items:center;gap:3px;font-size:10px;color:var(--amber);font-weight:600;white-space:nowrap;}
+.t-days{font-size:10px;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums;}
+.t-count{
+  font-size:10px;font-weight:700;color:var(--ink-4);
+  background:var(--surface-2);padding:1px 7px;border-radius:10px;
+}
+.t-arrow{color:var(--ink-4);transition:transform 0.2s;display:inline-flex;}
+.t-arrow--open{transform:rotate(90deg);}
+
+.t-card-bottom{margin-top:8px;display:flex;align-items:center;gap:10px;}
+.t-meta{font-size:10px;color:var(--ink-3);white-space:nowrap;font-variant-numeric:tabular-nums;}
+.t-bar{flex:1;height:3px;background:var(--surface-3);border-radius:2px;overflow:hidden;}
+.t-bar-fill{height:100%;border-radius:2px;transition:width 0.6s ease;}
+
+.t-children{margin-top:0;padding-left:0;}
+
+@media(min-width:768px){
+  .t-rail{width:24px;}
+  .t-dot{width:10px;height:10px;margin-top:18px;}
+  .t-card{padding:12px 18px;margin-left:10px;}
+  .t-title{font-size:13px;}
+  .tree-root{padding:16px 22px;}
+  .tree-root-title{font-size:16px;}
+}
+
+/* ═══════════════════════════════════════
+   Modal (Path)
+   ═══════════════════════════════════════ */
+.overlay{
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background:rgba(0,0,0,0.3);backdrop-filter:blur(4px);
+  z-index:999;display:flex;align-items:center;justify-content:center;padding:20px;
+}
+.modal{
+  background:var(--surface);border-radius:16px;padding:24px;
+  max-width:460px;width:100%;box-shadow:var(--shadow-lg);
+  animation:fadeIn 0.25s ease;
+}
+.modal-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;}
+.modal-title{font-size:16px;font-weight:800;color:var(--ink);}
+.modal-sub{font-size:11px;color:var(--ink-4);margin-top:2px;}
+.modal-close{
+  background:none;border:none;color:var(--ink-4);cursor:pointer;
+  padding:4px;border-radius:6px;transition:background 0.15s;
+}
+.modal-close:hover{background:var(--surface-2);}
+
+.path-list{display:flex;flex-direction:column;}
+.path-item{display:flex;gap:0;}
+.path-rail{display:flex;flex-direction:column;align-items:center;width:20px;flex-shrink:0;}
+.path-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:10px;}
+.path-line{flex:1;width:1.5px;background:var(--surface-3);margin:3px 0;}
+.path-body{
+  flex:1;padding:8px 14px;margin-left:8px;margin-bottom:8px;
+  border-radius:8px;background:var(--surface-2);border:1px solid var(--surface-3);
+}
+.path-body--leaf{background:var(--green-light);border-color:var(--green-muted);}
+.path-label{font-size:9px;font-weight:700;display:block;margin-bottom:2px;}
+.path-text{font-size:13px;color:var(--ink);font-weight:500;line-height:1.5;}
+.path-body--leaf .path-text{color:var(--green);font-weight:700;}
+
+/* ═══════════════════════════════════════
+   iPhone + LINE Mockup
+   ═══════════════════════════════════════ */
+.phone-wrap{display:flex;justify-content:center;padding:10px 0;}
+.phone-frame{
+  width:320px;
+  background:#8FBCBB;
+  border-radius:40px;
+  border:5px solid #1a1a1a;
+  overflow:hidden;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08) inset,
+    0 20px 60px rgba(0,0,0,0.25),
+    0 4px 12px rgba(0,0,0,0.12);
+  position:relative;
+}
+@media(min-width:768px){.phone-frame{width:360px;}}
+
+/* ステータスバー */
+.phone-status{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 24px 6px;font-size:13px;font-weight:600;color:#1a1a1a;
+  background:linear-gradient(180deg,rgba(109,160,126,0.6) 0%,rgba(109,160,126,0) 100%);
+  position:relative;
+}
+.phone-time{font-variant-numeric:tabular-nums;font-weight:700;}
+.phone-island{
+  width:90px;height:24px;border-radius:20px;background:#1a1a1a;
+  position:absolute;left:50%;transform:translateX(-50%);top:8px;
+}
+.phone-status-right{display:flex;align-items:center;gap:5px;color:#1a1a1a;}
+.phone-battery{width:20px;height:10px;border:1.2px solid #1a1a1a;border-radius:2px;position:relative;}
+.phone-battery::after{content:'';position:absolute;right:-3px;top:2.5px;width:1.5px;height:4px;background:#1a1a1a;border-radius:0 1px 1px 0;}
+.phone-battery-fill{width:75%;height:100%;background:#1a1a1a;border-radius:1px;}
+
+/* LINEナビ */
+.line-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 14px 10px;
+  background:rgba(78,130,95,0.85);
+  backdrop-filter:blur(12px);
+}
+.line-nav-left{padding:4px 6px;cursor:pointer;}
+.line-nav-center{flex:1;text-align:center;}
+.line-nav-name{font-size:15px;font-weight:700;color:#fff;}
+.line-nav-right{padding:4px 6px;}
+
+/* チャットエリア */
+.line-chat{
+  background:linear-gradient(170deg,#8FBCBB 0%,#7EB0A8 30%,#6DA47E 100%);
+  min-height:420px;padding:10px 10px 6px;position:relative;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 50%);
+}
+.line-date-pill{
+  text-align:center;margin:6px 0 14px;
+}
+.line-date-pill{
+  display:inline-block;width:100%;
+  font-size:10px;color:rgba(255,255,255,0.7);
+  background:rgba(0,0,0,0.12);
+  padding:3px 12px;border-radius:12px;
+  text-align:center;
+  margin:6px auto 14px;
+  width:fit-content;
+  display:block;
+  margin-left:auto;margin-right:auto;
+}
+
+/* メッセージ行 */
+.line-msg-row{display:flex;align-items:flex-start;gap:8px;}
+.line-avatar-circle{
+  width:32px;height:32px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,#5a8a6a,#4a7a5a);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 1px 3px rgba(0,0,0,0.15);
+}
+.line-msg-col{flex:1;min-width:0;}
+.line-sender{font-size:10px;color:rgba(255,255,255,0.65);margin-bottom:3px;margin-left:2px;}
+
+.line-bubble-wrap{display:flex;align-items:flex-end;gap:5px;}
+.line-bubble-body{
+  background:#fff;
+  border-radius:0 16px 16px 16px;
+  padding:14px 14px;
+  font-size:12.5px;color:#1a1a1a;line-height:1.6;
+  box-shadow:0 1px 4px rgba(0,0,0,0.06);
+  flex:1;min-width:0;
+  position:relative;
+}
+.line-read-time{
+  display:flex;flex-direction:column;align-items:flex-end;
+  font-size:9px;color:rgba(255,255,255,0.55);white-space:nowrap;flex-shrink:0;
+  gap:1px;padding-bottom:2px;
+}
+.line-read{color:rgba(255,255,255,0.45);font-size:8px;}
+
+/* 入力バー */
+.line-input-bar{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 10px 8px;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(12px);
+  border-top:1px solid rgba(0,0,0,0.06);
+}
+.line-input-plus{
+  width:28px;height:28px;border-radius:50%;
+  background:#e8e8e6;color:#888;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:300;flex-shrink:0;
+}
+.line-input-field{
+  flex:1;padding:7px 14px;border-radius:20px;
+  background:#f0f0ee;font-size:12px;color:#bbb;
+}
+.line-input-mic{
+  width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+
+/* ホームバー */
+.phone-home-bar{
+  padding:6px 0 10px;background:rgba(255,255,255,0.92);
+  display:flex;justify-content:center;
+}
+.phone-home-indicator{
+  width:100px;height:4px;border-radius:4px;background:rgba(0,0,0,0.2);
+}
+
+.lb-head{font-weight:700;font-size:14px;color:#1a1a1a;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #eee;}
+.lb-greet{font-size:12px;color:#888;margin-bottom:10px;}
+.lb-item{
+  padding:8px 10px;background:#f8f8f6;border-radius:8px;
+  margin-bottom:6px;border-left:3px solid var(--green);
+}
+.lb-item--warn{border-left-color:var(--amber);background:#fef9ee;}
+.lb-item-title{font-size:12px;font-weight:500;color:#1a1a1a;}
+.lb-item-meta{font-size:10px;color:#999;margin-top:3px;}
+.lb-item-alert{color:var(--amber);font-weight:600;}
+.lb-more{font-size:10px;color:#bbb;text-align:center;margin:8px 0;}
+.lb-suggest{
+  background:#f8f6ff;border-radius:8px;padding:10px;margin-bottom:10px;
+  border-left:3px solid var(--purple);
+}
+.lb-suggest-label{font-size:10px;color:var(--purple);font-weight:700;margin-bottom:2px;}
+.lb-suggest-text{font-size:11px;color:#555;line-height:1.5;}
+.lb-btns{display:flex;gap:5px;}
+.lb-btn{
+  flex:1;text-align:center;padding:8px 0;border-radius:8px;
+  background:#f0f0ee;color:#666;font-size:11px;font-weight:600;
+}
+.lb-btn--primary{background:#4a7048;color:#fff;}
+</style>
+</body>
+</html>
