@@ -4,40 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<title>フォーカスゴール — 星野舜</title>
+<title>Focus Goals — 星野舜</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,800;1,8..60,300;1,8..60,400&family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --ink:#1a1a1a;--ink-2:#4a4a4a;--ink-3:#7a7a7a;--ink-4:#a0a0a0;--ink-5:#c8c8c8;
-  --surface:#ffffff;--surface-2:#f7f7f5;--surface-3:#efeeeb;
-  --green:#1a7a42;--green-light:#e8f5ec;--green-muted:#b5dfc4;
+  --ink:#2a2418;--ink-2:#4a4038;--ink-3:#8a7e6c;--ink-4:#b8ae9a;--ink-5:#d8d0c0;
+  --surface:#faf8f4;--surface-2:#f4f1ea;--surface-3:#e8e2d6;
+  --card:#ffffff;--stripe:#f8f5ee;
+  --accent:#c45522;--accent-light:#fef0e8;--accent-muted:#e8a880;
+  --green:#3a8a48;--green-light:#eef7f0;--green-muted:#b8dcc0;
   --amber:#b8860b;--amber-light:#fdf6e8;--amber-muted:#f0dfa0;
-  --red:#c44;--red-light:#fef0f0;
+  --red:#c44040;--red-light:#fef0f0;
   --purple:#6b5ec4;--purple-light:#f0edf8;
   --blue:#2563eb;--blue-light:#eff4ff;
-  --radius:10px;--radius-lg:14px;
-  --font:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
-  --shadow-sm:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.06);
-  --shadow-md:0 4px 12px rgba(0,0,0,0.06),0 2px 4px rgba(0,0,0,0.04);
-  --shadow-lg:0 12px 32px rgba(0,0,0,0.08),0 4px 8px rgba(0,0,0,0.04);
+  --radius:8px;--radius-lg:12px;
+  --font-serif:'Source Serif 4','Noto Sans JP',Georgia,serif;
+  --font-sans:'DM Sans','Noto Sans JP',sans-serif;
+  --shadow-sm:0 1px 3px rgba(42,36,24,0.04);
+  --shadow-md:0 4px 12px rgba(42,36,24,0.07);
+  --shadow-lg:0 12px 32px rgba(42,36,24,0.1);
+  --border-thick:2px solid var(--ink);
+  --border-thin:1px solid var(--surface-3);
 }
 [data-theme="dark"]{
-  --ink:#e8e8e8;--ink-2:#c0c0c0;--ink-3:#909090;--ink-4:#686868;--ink-5:#404040;
-  --surface:#1a1a1e;--surface-2:#222226;--surface-3:#2e2e33;
-  --green:#3dbd6e;--green-light:#1a2e22;--green-muted:#1e4430;
+  --ink:#e8e4d8;--ink-2:#c8c0b0;--ink-3:#a09880;--ink-4:#706850;--ink-5:#484030;
+  --surface:#1c1b17;--surface-2:#242320;--surface-3:#3a3930;
+  --card:#2a2924;--stripe:#2e2c24;
+  --accent:#e87840;--accent-light:#3a2418;--accent-muted:#6a3820;
+  --green:#6ab870;--green-light:#1a2e1c;--green-muted:#2a4a2e;
   --amber:#e0a620;--amber-light:#2e2818;--amber-muted:#4a3d10;
   --red:#ef6b6b;--red-light:#2e1a1a;
   --purple:#9b8ee8;--purple-light:#252040;
   --blue:#5b8def;--blue-light:#1a2440;
-  --shadow-sm:0 1px 3px rgba(0,0,0,0.2),0 1px 2px rgba(0,0,0,0.15);
-  --shadow-md:0 4px 12px rgba(0,0,0,0.25),0 2px 4px rgba(0,0,0,0.15);
-  --shadow-lg:0 12px 32px rgba(0,0,0,0.35),0 4px 8px rgba(0,0,0,0.2);
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.2);
+  --shadow-md:0 4px 12px rgba(0,0,0,0.25);
+  --shadow-lg:0 12px 32px rgba(0,0,0,0.35);
+  --border-thick:2px solid var(--ink);
+  --border-thin:1px solid var(--surface-3);
 }
-body{font-family:var(--font);background:var(--surface-2);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased;line-height:1.6;transition:background 0.3s,color 0.3s;}
-.container{max-width:880px;margin:0 auto;padding:0 16px;}
-@media(min-width:768px){.container{padding:0 32px;}}
+body{font-family:var(--font-serif);background:var(--surface);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased;line-height:1.6;transition:background 0.4s,color 0.4s;}
+.container{max-width:860px;margin:0 auto;padding:0 20px;}
+@media(min-width:768px){.container{padding:0 36px;}}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
@@ -48,7 +57,6 @@ body{font-family:var(--font);background:var(--surface-2);color:var(--ink);min-he
 <script type="text/babel">
 const {useState,useEffect,useCallback,useMemo} = React;
 
-/* ═══ アラート文言（やわらかトーン固定） ═══ */
 const ALERT_TEXT = {
   stale: "30日以上更新がありません",
   granularity: "もう少し具体的にできるかも",
@@ -56,697 +64,426 @@ const ALERT_TEXT = {
   pace: "ペースが少しゆっくりです",
   noGoal: "ゴールが未設定です",
 };
-function getAlertText(alertKey) {
-  return ALERT_TEXT[alertKey] || alertKey || '';
-}
-/* stale判定用: 設定日から何日更新がないかを文言に反映 */
-function getStaleText(setDate) {
-  const days = calcElapsedDays(setDate);
-  return `${days}日間更新がありません`;
-}
-function getAlertTextDynamic(alertKey, setDate) {
-  if (alertKey === 'stale' && setDate) return getStaleText(setDate);
-  return getAlertText(alertKey);
-}
+function getAlertText(k){return ALERT_TEXT[k]||k||'';}
+function calcElapsedDays(d){return d?Math.ceil((TODAY-new Date(d))/86400000):0;}
+function getStaleText(d){return `${calcElapsedDays(d)}日間更新がありません`;}
+function getAlertTextDynamic(k,d){if(k==='stale'&&d)return getStaleText(d);return getAlertText(k);}
 
-/* ═══ 基準日（動的） ═══ */
-const TODAY = new Date();
-TODAY.setHours(0,0,0,0);
-const TODAY_STR = `${TODAY.getFullYear()}.${String(TODAY.getMonth()+1).padStart(2,'0')}.${String(TODAY.getDate()).padStart(2,'0')}`;
-const WEEKDAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-const TODAY_DISPLAY = `${TODAY_STR} ${WEEKDAYS[TODAY.getDay()]}`;
-const TODAY_JP = `${TODAY.getFullYear()}年${TODAY.getMonth()+1}月${TODAY.getDate()}日（${'日月火水木金土'[TODAY.getDay()]}）`;
+const TODAY=new Date();TODAY.setHours(0,0,0,0);
+const TODAY_STR=`${TODAY.getFullYear()}.${String(TODAY.getMonth()+1).padStart(2,'0')}.${String(TODAY.getDate()).padStart(2,'0')}`;
+const WEEKDAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const TODAY_DISPLAY=`${TODAY_STR} ${WEEKDAYS[TODAY.getDay()]}`;
+const TODAY_JP=`${TODAY.getFullYear()}年${TODAY.getMonth()+1}月${TODAY.getDate()}日（${'日月火水木金土'[TODAY.getDay()]}）`;
 
-const TREE = {
-  id:"root", level:0,
-  title:"星野舜 全体ゴール",
-  children:[
-    {
-      id:"b1", level:1, title:"Addness定常業務の健全性を全社で担保する",
-      children:[
-        {
-          id:"b1-1", level:2, title:"ゴール設定・分解を全員100%完了させる",
-          children:[
-            { id:"b1-1-1", level:3, title:"ゴール設定・ゴール分解（定常業務設定）を全員100%完了させる", setDate:"2026-01-30", deadline:"2026-03-15", progress:65, status:"on_track" },
-            { id:"b1-1-2", level:3, title:"Addnessゴール設定＆Todo設定管理", setDate:"2026-02-05", deadline:"2026-03-10", progress:40, status:"on_track" },
-          ]
-        },
-        {
-          id:"b1-2", level:2, title:"タスク提出率を安定させる",
-          children:[
-            { id:"b1-2-1", level:3, title:"提出タスクのAddness Todo化100%を達成する", setDate:"2026-01-30", deadline:"2026-03-15", progress:70, status:"on_track" },
-            { id:"b1-2-2", level:3, title:"提出率75%以上を達成する", setDate:"2026-01-30", deadline:"2026-03-15", progress:55, status:"on_track" },
-            { id:"b1-2-3", level:3, title:"日々のタスク提出管理", setDate:"2026-02-05", deadline:"2026-03-10", progress:50, status:"on_track" },
-            { id:"b1-2-4", level:3, title:"【定常業務】タスク提出・Addness管理", setDate:"2026-02-05", deadline:"2026-03-10", progress:45, status:"on_track" },
-          ]
-        },
-      ]
-    },
-    {
-      id:"b2", level:1, title:"定常業務 健全性ダッシュボード基盤を構築する",
-      children:[
-        {
-          id:"b2-g", level:2, title:"ダッシュボード構築・運用",
-          children:[
-            { id:"b2-1", level:3, title:"【構築PJ】ダッシュボード（GAS Web App）", setDate:"2026-02-12", deadline:"2026-03-20", progress:60, status:"on_track" },
-            { id:"b2-2", level:3, title:"Web App改修：表示バグ修正＋視覚改善＋月セレクタ", setDate:"2026-02-12", deadline:"2026-03-15", progress:35, status:"on_track" },
-            { id:"b2-3", level:3, title:"【構築PJ】過去月データ取得の自動化", setDate:"2026-02-12", deadline:"2026-03-20", progress:20, status:"on_track" },
-          ]
-        },
-        {
-          id:"b2-h", level:2, title:"外部連携・運用フロー整備",
-          children:[
-            { id:"b2-4", level:3, title:"【構築PJ】Looker Studio統合", setDate:"2026-02-12", deadline:"2026-03-25", progress:15, status:"on_track" },
-            { id:"b2-5", level:3, title:"【構築PJ】月次運用フロー確定", setDate:"2026-02-12", deadline:"2026-03-20", progress:10, status:"on_track" },
-            { id:"b2-6", level:3, title:"【構築PJ】URLなしメンバー対応", setDate:"2026-02-12", deadline:"2026-03-15", progress:30, status:"on_track" },
-          ]
-        },
-      ]
-    },
-    {
-      id:"b3", level:1, title:"「星野舜」全体の定常業務(仕組み)の健全性担保",
-      children:[
-        {
-          id:"b3-1", level:2, title:"経理・入金処理を漏れなく回す",
-          children:[
-            { id:"b3-1-1", level:3, title:"契約データの取込（1,8,15,22）", setDate:"2026-02-05", deadline:"2026-03-05", progress:80, status:"on_track" },
-            { id:"b3-1-2", level:3, title:"MOSH入金データ取込とその後の処理（1,16）", setDate:"2026-02-05", deadline:"2026-03-05", progress:75, status:"on_track" },
-            { id:"b3-1-3", level:3, title:"CBS入金データ取込（10,20,30）", setDate:"2026-02-05", deadline:"2026-03-05", progress:70, status:"on_track" },
-            { id:"b3-1-4", level:3, title:"日本プラム入金データ取込(5,10,15,20,25,30)", setDate:"2026-02-05", deadline:"2026-03-05", progress:65, status:"on_track" },
-            { id:"b3-1-5", level:3, title:"【定常業務】売掛金管理", setDate:"2026-02-05", deadline:"2026-03-10", progress:50, status:"on_track" },
-          ]
-        },
-        {
-          id:"b3-2", level:2, title:"マスターデータ整備",
-          children:[
-            { id:"b3-2-1", level:3, title:"取引先のマスターデータを作る", setDate:"2026-01-07", deadline:"2026-02-15", progress:5, status:"warning", alertKey:"stale" },
-          ]
-        },
-        {
-          id:"b3-3g", level:2, title:"管理ツール・ルール策定",
-          children:[
-            { id:"b3-3", level:3, title:"色分けルール決め", setDate:"2026-01-26", deadline:"2026-03-01", progress:60, status:"on_track" },
-            { id:"b3-4", level:3, title:"個人管理_2026年シート", setDate:"2026-01-29", deadline:"2026-03-01", progress:70, status:"on_track" },
-          ]
-        },
-      ]
-    },
-  ]
-};
+const TREE={id:"root",level:0,title:"星野舜 全体ゴール",children:[
+  {id:"b1",level:1,title:"Addness定常業務の健全性を全社で担保する",children:[
+    {id:"b1-1",level:2,title:"ゴール設定・分解を全員100%完了させる",children:[
+      {id:"b1-1-1",level:3,title:"ゴール設定・ゴール分解（定常業務設定）を全員100%完了させる",setDate:"2026-01-30",deadline:"2026-03-15",progress:65,status:"on_track"},
+      {id:"b1-1-2",level:3,title:"Addnessゴール設定＆Todo設定管理",setDate:"2026-02-05",deadline:"2026-03-10",progress:40,status:"on_track"},
+    ]},
+    {id:"b1-2",level:2,title:"タスク提出率を安定させる",children:[
+      {id:"b1-2-1",level:3,title:"提出タスクのAddness Todo化100%を達成する",setDate:"2026-01-30",deadline:"2026-03-15",progress:70,status:"on_track"},
+      {id:"b1-2-2",level:3,title:"提出率75%以上を達成する",setDate:"2026-01-30",deadline:"2026-03-15",progress:55,status:"on_track"},
+      {id:"b1-2-3",level:3,title:"日々のタスク提出管理",setDate:"2026-02-05",deadline:"2026-03-10",progress:50,status:"on_track"},
+      {id:"b1-2-4",level:3,title:"【定常業務】タスク提出・Addness管理",setDate:"2026-02-05",deadline:"2026-03-10",progress:45,status:"on_track"},
+    ]},
+  ]},
+  {id:"b2",level:1,title:"定常業務 健全性ダッシュボード基盤を構築する",children:[
+    {id:"b2-g",level:2,title:"ダッシュボード構築・運用",children:[
+      {id:"b2-1",level:3,title:"【構築PJ】ダッシュボード（GAS Web App）",setDate:"2026-02-12",deadline:"2026-03-20",progress:60,status:"on_track"},
+      {id:"b2-2",level:3,title:"Web App改修：表示バグ修正＋視覚改善＋月セレクタ",setDate:"2026-02-12",deadline:"2026-03-15",progress:35,status:"on_track"},
+      {id:"b2-3",level:3,title:"【構築PJ】過去月データ取得の自動化",setDate:"2026-02-12",deadline:"2026-03-20",progress:20,status:"on_track"},
+    ]},
+    {id:"b2-h",level:2,title:"外部連携・運用フロー整備",children:[
+      {id:"b2-4",level:3,title:"【構築PJ】Looker Studio統合",setDate:"2026-02-12",deadline:"2026-03-25",progress:15,status:"on_track"},
+      {id:"b2-5",level:3,title:"【構築PJ】月次運用フロー確定",setDate:"2026-02-12",deadline:"2026-03-20",progress:10,status:"on_track"},
+      {id:"b2-6",level:3,title:"【構築PJ】URLなしメンバー対応",setDate:"2026-02-12",deadline:"2026-03-15",progress:30,status:"on_track"},
+    ]},
+  ]},
+  {id:"b3",level:1,title:"「星野舜」全体の定常業務(仕組み)の健全性担保",children:[
+    {id:"b3-1",level:2,title:"経理・入金処理を漏れなく回す",children:[
+      {id:"b3-1-1",level:3,title:"契約データの取込（1,8,15,22）",setDate:"2026-02-05",deadline:"2026-03-05",progress:80,status:"on_track"},
+      {id:"b3-1-2",level:3,title:"MOSH入金データ取込とその後の処理（1,16）",setDate:"2026-02-05",deadline:"2026-03-05",progress:75,status:"on_track"},
+      {id:"b3-1-3",level:3,title:"CBS入金データ取込（10,20,30）",setDate:"2026-02-05",deadline:"2026-03-05",progress:70,status:"on_track"},
+      {id:"b3-1-4",level:3,title:"日本プラム入金データ取込(5,10,15,20,25,30)",setDate:"2026-02-05",deadline:"2026-03-05",progress:65,status:"on_track"},
+      {id:"b3-1-5",level:3,title:"【定常業務】売掛金管理",setDate:"2026-02-05",deadline:"2026-03-10",progress:50,status:"on_track"},
+    ]},
+    {id:"b3-2",level:2,title:"マスターデータ整備",children:[
+      {id:"b3-2-1",level:3,title:"取引先のマスターデータを作る",setDate:"2026-01-07",deadline:"2026-02-15",progress:5,status:"warning",alertKey:"stale"},
+    ]},
+    {id:"b3-3g",level:2,title:"管理ツール・ルール策定",children:[
+      {id:"b3-3",level:3,title:"色分けルール決め",setDate:"2026-01-26",deadline:"2026-03-01",progress:60,status:"on_track"},
+      {id:"b3-4",level:3,title:"個人管理_2026年シート",setDate:"2026-01-29",deadline:"2026-03-01",progress:70,status:"on_track"},
+    ]},
+  ]},
+]};
 
 const GOALS=[
-  { id:1,title:"ゴール設定・ゴール分解（定常業務設定）を全員100%完了させる",setDate:"2026-01-30",deadline:"2026-03-15",progress:65,status:"on_track",alertKey:"",path:["Addness定常業務の健全性を全社で担保する","ゴール設定・分解を全員100%完了させる"]},
-  { id:2,title:"提出タスクのAddness Todo化100%を達成する",setDate:"2026-01-30",deadline:"2026-03-15",progress:70,status:"on_track",alertKey:"",path:["Addness定常業務の健全性を全社で担保する","タスク提出率を安定させる"]},
-  { id:3,title:"提出率75%以上を達成する",setDate:"2026-01-30",deadline:"2026-03-15",progress:55,status:"on_track",alertKey:"",path:["Addness定常業務の健全性を全社で担保する","タスク提出率を安定させる"]},
-  { id:4,title:"Web App改修：表示バグ修正＋視覚改善＋月セレクタ",setDate:"2026-02-12",deadline:"2026-03-15",progress:35,status:"on_track",alertKey:"",path:["健全性ダッシュボード基盤を構築する","ダッシュボード構築・運用"]},
-  { id:5,title:"【構築PJ】ダッシュボード（GAS Web App）",setDate:"2026-02-12",deadline:"2026-03-20",progress:60,status:"on_track",alertKey:"",path:["健全性ダッシュボード基盤を構築する","ダッシュボード構築・運用"]},
-  { id:6,title:"【構築PJ】過去月データ取得の自動化",setDate:"2026-02-12",deadline:"2026-03-20",progress:20,status:"on_track",alertKey:"",path:["健全性ダッシュボード基盤を構築する","ダッシュボード構築・運用"]},
-  { id:7,title:"【構築PJ】Looker Studio統合",setDate:"2026-02-12",deadline:"2026-03-25",progress:15,status:"on_track",alertKey:"",path:["健全性ダッシュボード基盤を構築する","外部連携・運用フロー整備"]},
-  { id:8,title:"【構築PJ】月次運用フロー確定",setDate:"2026-02-12",deadline:"2026-03-20",progress:10,status:"on_track",alertKey:"",path:["健全性ダッシュボード基盤を構築する","外部連携・運用フロー整備"]},
-  { id:9,title:"【構築PJ】URLなしメンバー対応",setDate:"2026-02-12",deadline:"2026-03-15",progress:30,status:"on_track",alertKey:"",path:["健全性ダッシュボード基盤を構築する","外部連携・運用フロー整備"]},
-  { id:10,title:"【構築PJ】定常業務 健全性ダッシュボード基盤を構築する",setDate:"2026-02-12",deadline:"2026-03-25",progress:25,status:"on_track",alertKey:"",path:["健全性ダッシュボード基盤を構築する"]},
-  { id:11,title:"取引先のマスターデータを作る",setDate:"2026-01-07",deadline:"2026-02-15",progress:5,status:"warning",alertKey:"stale",path:["全体の定常業務の健全性担保","マスターデータ整備"]},
-  { id:12,title:"「星野舜」全体の定常業務(仕組み)の健全性担保",setDate:"2026-01-23",deadline:"2026-03-31",progress:40,status:"on_track",alertKey:"",path:["全体の定常業務の健全性担保"]},
-  { id:13,title:"日々のタスク提出管理",setDate:"2026-02-05",deadline:"2026-03-10",progress:50,status:"on_track",alertKey:"",path:["Addness定常業務の健全性を全社で担保する","タスク提出率を安定させる"]},
-  { id:14,title:"契約データの取込（1,8,15,22）",setDate:"2026-02-05",deadline:"2026-03-05",progress:80,status:"on_track",alertKey:"",path:["全体の定常業務の健全性担保","経理・入金処理を漏れなく回す"]},
-  { id:15,title:"Addnessゴール設定＆Todo設定管理",setDate:"2026-02-05",deadline:"2026-03-10",progress:40,status:"on_track",alertKey:"",path:["Addness定常業務の健全性を全社で担保する","ゴール設定・分解を全員100%完了させる"]},
-  { id:16,title:"MOSH入金データ取込とその後の処理（1,16）",setDate:"2026-02-05",deadline:"2026-03-05",progress:75,status:"on_track",alertKey:"",path:["全体の定常業務の健全性担保","経理・入金処理を漏れなく回す"]},
-  { id:17,title:"【定常業務】売掛金管理",setDate:"2026-02-05",deadline:"2026-03-10",progress:50,status:"on_track",alertKey:"",path:["全体の定常業務の健全性担保","経理・入金処理を漏れなく回す"]},
-  { id:18,title:"【定常業務】タスク提出・Addness管理",setDate:"2026-02-05",deadline:"2026-03-10",progress:45,status:"on_track",alertKey:"",path:["Addness定常業務の健全性を全社で担保する","タスク提出率を安定させる"]},
-  { id:19,title:"色分けルール決め",setDate:"2026-01-26",deadline:"2026-03-01",progress:60,status:"on_track",alertKey:"",path:["全体の定常業務の健全性担保","管理ツール・ルール策定"]},
-  { id:20,title:"個人管理_2026年シート",setDate:"2026-01-29",deadline:"2026-03-01",progress:70,status:"on_track",alertKey:"",path:["全体の定常業務の健全性担保","管理ツール・ルール策定"]},
+  {id:1,title:"ゴール設定・ゴール分解（定常業務設定）を全員100%完了させる",setDate:"2026-01-30",deadline:"2026-03-15",progress:65,status:"on_track",alertKey:"",path:["Addness定常業務の健全性を全社で担保する","ゴール設定・分解を全員100%完了させる"]},
+  {id:2,title:"提出タスクのAddness Todo化100%を達成する",setDate:"2026-01-30",deadline:"2026-03-15",progress:70,status:"on_track",alertKey:"",path:["Addness定常業務の健全性を全社で担保する","タスク提出率を安定させる"]},
+  {id:3,title:"提出率75%以上を達成する",setDate:"2026-01-30",deadline:"2026-03-15",progress:55,status:"on_track",alertKey:"",path:["Addness定常業務の健全性を全社で担保する","タスク提出率を安定させる"]},
+  {id:4,title:"Web App改修：表示バグ修正＋視覚改善＋月セレクタ",setDate:"2026-02-12",deadline:"2026-03-15",progress:35,status:"on_track",alertKey:"",path:["健全性ダッシュボード基盤を構築する","ダッシュボード構築・運用"]},
+  {id:5,title:"【構築PJ】ダッシュボード（GAS Web App）",setDate:"2026-02-12",deadline:"2026-03-20",progress:60,status:"on_track",alertKey:"",path:["健全性ダッシュボード基盤を構築する","ダッシュボード構築・運用"]},
+  {id:6,title:"【構築PJ】過去月データ取得の自動化",setDate:"2026-02-12",deadline:"2026-03-20",progress:20,status:"on_track",alertKey:"",path:["健全性ダッシュボード基盤を構築する","ダッシュボード構築・運用"]},
+  {id:7,title:"【構築PJ】Looker Studio統合",setDate:"2026-02-12",deadline:"2026-03-25",progress:15,status:"on_track",alertKey:"",path:["健全性ダッシュボード基盤を構築する","外部連携・運用フロー整備"]},
+  {id:8,title:"【構築PJ】月次運用フロー確定",setDate:"2026-02-12",deadline:"2026-03-20",progress:10,status:"on_track",alertKey:"",path:["健全性ダッシュボード基盤を構築する","外部連携・運用フロー整備"]},
+  {id:9,title:"【構築PJ】URLなしメンバー対応",setDate:"2026-02-12",deadline:"2026-03-15",progress:30,status:"on_track",alertKey:"",path:["健全性ダッシュボード基盤を構築する","外部連携・運用フロー整備"]},
+  {id:10,title:"【構築PJ】定常業務 健全性ダッシュボード基盤を構築する",setDate:"2026-02-12",deadline:"2026-03-25",progress:25,status:"on_track",alertKey:"",path:["健全性ダッシュボード基盤を構築する"]},
+  {id:11,title:"取引先のマスターデータを作る",setDate:"2026-01-07",deadline:"2026-02-15",progress:5,status:"warning",alertKey:"stale",path:["全体の定常業務の健全性担保","マスターデータ整備"]},
+  {id:12,title:"「星野舜」全体の定常業務(仕組み)の健全性担保",setDate:"2026-01-23",deadline:"2026-03-31",progress:40,status:"on_track",alertKey:"",path:["全体の定常業務の健全性担保"]},
+  {id:13,title:"日々のタスク提出管理",setDate:"2026-02-05",deadline:"2026-03-10",progress:50,status:"on_track",alertKey:"",path:["Addness定常業務の健全性を全社で担保する","タスク提出率を安定させる"]},
+  {id:14,title:"契約データの取込（1,8,15,22）",setDate:"2026-02-05",deadline:"2026-03-05",progress:80,status:"on_track",alertKey:"",path:["全体の定常業務の健全性担保","経理・入金処理を漏れなく回す"]},
+  {id:15,title:"Addnessゴール設定＆Todo設定管理",setDate:"2026-02-05",deadline:"2026-03-10",progress:40,status:"on_track",alertKey:"",path:["Addness定常業務の健全性を全社で担保する","ゴール設定・分解を全員100%完了させる"]},
+  {id:16,title:"MOSH入金データ取込とその後の処理（1,16）",setDate:"2026-02-05",deadline:"2026-03-05",progress:75,status:"on_track",alertKey:"",path:["全体の定常業務の健全性担保","経理・入金処理を漏れなく回す"]},
+  {id:17,title:"【定常業務】売掛金管理",setDate:"2026-02-05",deadline:"2026-03-10",progress:50,status:"on_track",alertKey:"",path:["全体の定常業務の健全性担保","経理・入金処理を漏れなく回す"]},
+  {id:18,title:"【定常業務】タスク提出・Addness管理",setDate:"2026-02-05",deadline:"2026-03-10",progress:45,status:"on_track",alertKey:"",path:["Addness定常業務の健全性を全社で担保する","タスク提出率を安定させる"]},
+  {id:19,title:"色分けルール決め",setDate:"2026-01-26",deadline:"2026-03-01",progress:60,status:"on_track",alertKey:"",path:["全体の定常業務の健全性担保","管理ツール・ルール策定"]},
+  {id:20,title:"個人管理_2026年シート",setDate:"2026-01-29",deadline:"2026-03-01",progress:70,status:"on_track",alertKey:"",path:["全体の定常業務の健全性担保","管理ツール・ルール策定"]},
 ];
 
-function countLeaves(node){
-  if(!node.children||!node.children.length) return 1;
-  return node.children.reduce((s,c)=>s+countLeaves(c),0);
-}
-function calcElapsedDays(d){ return d ? Math.ceil((TODAY-new Date(d))/86400000) : 0; }
-function calcRemainingDays(d){ return d ? Math.ceil((new Date(d)-TODAY)/86400000) : null; }
-function formatShortDate(d){ return d ? d.slice(5).replace('-','/') : ''; }
+function countLeaves(n){if(!n.children||!n.children.length)return 1;return n.children.reduce((s,c)=>s+countLeaves(c),0);}
+function calcRemainingDays(d){return d?Math.ceil((new Date(d)-TODAY)/86400000):null;}
+function formatShortDate(d){return d?d.slice(5).replace('-','/'):'';}
 
-/* ─── Icons (inline SVG) ─── */
-const Icon = {
-  chevron: (props) => <svg width="12" height="12" viewBox="0 0 12 12" fill="none" {...props}><path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  check: (props) => <svg width="14" height="14" viewBox="0 0 14 14" fill="none" {...props}><path d="M3 7.5L5.5 10L11 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  route: (props) => <svg width="14" height="14" viewBox="0 0 14 14" fill="none" {...props}><circle cx="7" cy="3" r="1.5" stroke="currentColor" strokeWidth="1.3"/><circle cx="7" cy="11" r="1.5" stroke="currentColor" strokeWidth="1.3"/><path d="M7 4.5V9.5" stroke="currentColor" strokeWidth="1.3" strokeDasharray="2 1.5"/></svg>,
-  close: (props) => <svg width="16" height="16" viewBox="0 0 16 16" fill="none" {...props}><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>,
-  alert: (props) => <svg width="13" height="13" viewBox="0 0 13 13" fill="none" {...props}><path d="M6.5 1L12 11.5H1L6.5 1Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/><path d="M6.5 5V7.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/><circle cx="6.5" cy="9.2" r="0.6" fill="currentColor"/></svg>,
-  external: (props) => <svg width="12" height="12" viewBox="0 0 12 12" fill="none" {...props}><path d="M9 3L4.5 7.5M9 3H6M9 3V6" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><path d="M9 8V9.5A1.5 1.5 0 017.5 11H2.5A1.5 1.5 0 011 9.5V4.5A1.5 1.5 0 012.5 3H4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/></svg>,
-  sun: (props) => <svg width="16" height="16" viewBox="0 0 16 16" fill="none" {...props}><circle cx="8" cy="8" r="3" stroke="currentColor" strokeWidth="1.3"/><path d="M8 1.5V3M8 13V14.5M1.5 8H3M13 8H14.5M3.4 3.4L4.5 4.5M11.5 11.5L12.6 12.6M3.4 12.6L4.5 11.5M11.5 4.5L12.6 3.4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>,
-  moon: (props) => <svg width="16" height="16" viewBox="0 0 16 16" fill="none" {...props}><path d="M13.5 8.5a5.5 5.5 0 01-6-6 5.5 5.5 0 106 6z" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  sortAsc: (props) => <svg width="12" height="12" viewBox="0 0 12 12" fill="none" {...props}><path d="M6 2V10M6 2L3 5M6 2L9 5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  sortDesc: (props) => <svg width="12" height="12" viewBox="0 0 12 12" fill="none" {...props}><path d="M6 10V2M6 10L3 7M6 10L9 7" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  help: (props) => <svg width="16" height="16" viewBox="0 0 16 16" fill="none" {...props}><circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.3"/><path d="M6 6.2a2 2 0 013.5 1.3c0 1.3-2 1.3-2 2.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/><circle cx="7.5" cy="12" r="0.7" fill="currentColor"/></svg>,
+/* ── Icons ── */
+const Icon={
+  chevron:p=><svg width="12" height="12" viewBox="0 0 12 12" fill="none" {...p}><path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  check:p=><svg width="14" height="14" viewBox="0 0 14 14" fill="none" {...p}><path d="M3 7.5L5.5 10L11 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  route:p=><svg width="14" height="14" viewBox="0 0 14 14" fill="none" {...p}><circle cx="7" cy="3" r="1.5" stroke="currentColor" strokeWidth="1.3"/><circle cx="7" cy="11" r="1.5" stroke="currentColor" strokeWidth="1.3"/><path d="M7 4.5V9.5" stroke="currentColor" strokeWidth="1.3" strokeDasharray="2 1.5"/></svg>,
+  close:p=><svg width="16" height="16" viewBox="0 0 16 16" fill="none" {...p}><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+  alert:p=><svg width="13" height="13" viewBox="0 0 13 13" fill="none" {...p}><path d="M6.5 1L12 11.5H1L6.5 1Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/><path d="M6.5 5V7.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/><circle cx="6.5" cy="9.2" r="0.6" fill="currentColor"/></svg>,
+  external:p=><svg width="12" height="12" viewBox="0 0 12 12" fill="none" {...p}><path d="M9 3L4.5 7.5M9 3H6M9 3V6" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><path d="M9 8V9.5A1.5 1.5 0 017.5 11H2.5A1.5 1.5 0 011 9.5V4.5A1.5 1.5 0 012.5 3H4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/></svg>,
+  sun:p=><svg width="16" height="16" viewBox="0 0 16 16" fill="none" {...p}><circle cx="8" cy="8" r="3" stroke="currentColor" strokeWidth="1.3"/><path d="M8 1.5V3M8 13V14.5M1.5 8H3M13 8H14.5M3.4 3.4L4.5 4.5M11.5 11.5L12.6 12.6M3.4 12.6L4.5 11.5M11.5 4.5L12.6 3.4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>,
+  moon:p=><svg width="16" height="16" viewBox="0 0 16 16" fill="none" {...p}><path d="M13.5 8.5a5.5 5.5 0 01-6-6 5.5 5.5 0 106 6z" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  sortAsc:p=><svg width="12" height="12" viewBox="0 0 12 12" fill="none" {...p}><path d="M6 2V10M6 2L3 5M6 2L9 5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  sortDesc:p=><svg width="12" height="12" viewBox="0 0 12 12" fill="none" {...p}><path d="M6 10V2M6 10L3 7M6 10L9 7" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  help:p=><svg width="16" height="16" viewBox="0 0 16 16" fill="none" {...p}><circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.3"/><path d="M6 6.2a2 2 0 013.5 1.3c0 1.3-2 1.3-2 2.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/><circle cx="7.5" cy="12" r="0.7" fill="currentColor"/></svg>,
 };
 
-const LEVEL_META = [
-  { label:"ルート", tag:"ROOT", color:"var(--green)" },
-  { label:"大目標", tag:"L1", color:"var(--blue)" },
-  { label:"中間目標", tag:"L2", color:"var(--amber)" },
-  { label:"フォーカスゴール", tag:"L3", color:"var(--green)" },
+const LEVEL_META=[
+  {label:"ルート",tag:"ROOT",color:"var(--green)"},
+  {label:"大目標",tag:"L1",color:"var(--blue)"},
+  {label:"中間目標",tag:"L2",color:"var(--amber)"},
+  {label:"フォーカスゴール",tag:"L3",color:"var(--green)"},
 ];
 
-/* ─── 進捗バー + 残日数 ─── */
-function ProgressRow({deadline, progress, isWarn}){
-  const remaining = calcRemainingDays(deadline);
-  const isOverdue = remaining !== null && remaining < 0;
-  const overdueDays = isOverdue ? Math.abs(remaining) : 0;
-  const progressPercent = Math.min(100, Math.max(0, progress || 0));
+/* ── Circular Progress ── */
+function CircleProgress({value,size=44,stroke=2.5,color}){
+  const r=(size-stroke*2)/2;
+  const circ=2*Math.PI*r;
+  const offset=circ-((value||0)/100)*circ;
+  return(
+    <div style={{position:'relative',width:size,height:size,flexShrink:0}}>
+      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+        <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="var(--surface-3)" strokeWidth={stroke}/>
+        <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={color} strokeWidth={stroke} strokeLinecap="round"
+          strokeDasharray={circ} strokeDashoffset={offset} transform={`rotate(-90 ${size/2} ${size/2})`}
+          style={{transition:'stroke-dashoffset 0.8s ease'}}/>
+      </svg>
+      <div style={{position:'absolute',inset:0,display:'flex',alignItems:'center',justifyContent:'center',
+        fontSize:size>40?12:10,fontWeight:700,color:'var(--ink)',fontFamily:'var(--font-sans)'}}>{value}<span style={{fontSize:size>40?8:7,fontWeight:600,opacity:0.6}}>%</span></div>
+    </div>
+  );
+}
 
-  return (
+/* ── ProgressRow (bar style for tree) ── */
+function ProgressRow({deadline,progress,isWarn}){
+  const remaining=calcRemainingDays(deadline);
+  const isOverdue=remaining!==null&&remaining<0;
+  const pColor=isWarn?'var(--amber)':progress>60?'var(--green)':'var(--accent)';
+  return(
     <div className="progress-row">
-      <div className="progress-bar-wrap">
-        <div className="progress-track">
-          <div className="progress-fill" style={{
-            width: progressPercent+"%",
-            background: isWarn ? 'var(--amber)' : progressPercent > 60 ? 'var(--green)' : 'var(--blue)'
-          }}/>
-        </div>
-        <span className="progress-pct" style={{color: isWarn ? 'var(--amber)' : progressPercent > 60 ? 'var(--green)' : 'var(--blue)'}}>{progressPercent}%</span>
-      </div>
-      <span className={isOverdue ? "progress-days progress-days--overdue" : "progress-days"} style={{color: isOverdue ? 'var(--red)' : remaining !== null && remaining < 7 ? 'var(--amber)' : 'var(--ink-3)'}}>
-        {isOverdue ? `${overdueDays}日超過` : remaining !== null ? `残${remaining}日` : ''}
+      <CircleProgress value={progress} size={40} stroke={2.5} color={pColor}/>
+      <span className="progress-days" style={{color:isOverdue?'var(--red)':remaining!==null&&remaining<7?'var(--amber)':'var(--ink-3)'}}>
+        {isOverdue?`${Math.abs(remaining)}日超過`:remaining!==null?`残${remaining}日`:''}
       </span>
     </div>
   );
 }
 
-/* ─── ツリーノード ─── */
-function TreeNode({node, depth=0, isLast=false}){
-  const [open, setOpen] = useState(depth < 2);
-  const hasKids = node.children && node.children.length > 0;
-  const isLeaf = !hasKids;
-  const level = node.level || depth;
-  const meta = LEVEL_META[Math.min(level,3)];
-  const remaining = calcRemainingDays(node.deadline);
-  const leafCount = hasKids ? countLeaves(node) : 0;
-  const isWarn = node.status==="warning"||node.alertKey;
-  const alertText = node.alertKey ? getAlertTextDynamic(node.alertKey, node.setDate) : '';
-
-  return (
+/* ── TreeNode ── */
+function TreeNode({node,depth=0,isLast=false}){
+  const[open,setOpen]=useState(depth<2);
+  const hasKids=node.children&&node.children.length>0;
+  const isLeaf=!hasKids;
+  const level=node.level||depth;
+  const meta=LEVEL_META[Math.min(level,3)];
+  const remaining=calcRemainingDays(node.deadline);
+  const leafCount=hasKids?countLeaves(node):0;
+  const isWarn=node.status==="warning"||node.alertKey;
+  const alertText=node.alertKey?getAlertTextDynamic(node.alertKey,node.setDate):'';
+  return(
     <div className="t-item">
       <div className="t-rail">
-        <div className="t-dot" style={{
-          background: isWarn ? 'var(--amber)' : isLeaf ? 'var(--green)' : meta.color,
-          boxShadow: isWarn ? '0 0 0 3px var(--amber-light)' : isLeaf ? '0 0 0 3px var(--green-light)' : 'none'
-        }}/>
-        {!isLast && <div className="t-line"/>}
+        <div className="t-dot" style={{background:isWarn?'var(--amber)':isLeaf?'var(--green)':meta.color,boxShadow:isWarn?'0 0 0 3px var(--amber-light)':isLeaf?'0 0 0 3px var(--green-light)':'none'}}/>
+        {!isLast&&<div className="t-line"/>}
       </div>
       <div className="t-body">
-        <div
-          className={"t-card" + (hasKids?" t-card--parent":"") + (isLeaf?" t-card--leaf":"") + (isWarn?" t-card--warn":"")}
-          onClick={hasKids?()=>setOpen(!open):undefined}
-        >
+        <div className={"t-card"+(hasKids?" t-card--parent":"")+(isLeaf?" t-card--leaf":"")+(isWarn?" t-card--warn":"")} onClick={hasKids?()=>setOpen(!open):undefined}>
           <div className="t-card-top">
-            <span className="t-tag" style={{
-              background: isWarn ? 'var(--amber-light)' : level===1 ? 'var(--blue-light)' : level===2 ? 'var(--amber-light)' : 'var(--green-light)',
-              color: isWarn ? 'var(--amber)' : meta.color
-            }}>{meta.tag}</span>
+            <span className="t-tag" style={{background:isWarn?'var(--amber-light)':level===1?'var(--blue-light)':level===2?'var(--amber-light)':'var(--green-light)',color:isWarn?'var(--amber)':meta.color}}>{meta.tag}</span>
             <span className="t-title">{node.title}</span>
             <div className="t-card-right">
-              {alertText && <span className="t-alert"><Icon.alert style={{color:'var(--amber)'}}/> {alertText}</span>}
-              {isLeaf && remaining !== null && <span className="t-days" style={{color:remaining<0?'var(--red)':remaining<7?'var(--amber)':'var(--ink-3)'}}>
-                {remaining < 0 ? `${Math.abs(remaining)}日超過` : `残${remaining}日`}
-              </span>}
-              {hasKids && <span className="t-count">{leafCount}</span>}
-              {hasKids && <span className={"t-arrow"+(open?" t-arrow--open":"")}><Icon.chevron/></span>}
+              {alertText&&<span className="t-alert"><Icon.alert style={{color:'var(--amber)'}}/> {alertText}</span>}
+              {isLeaf&&remaining!==null&&<span className="t-days" style={{color:remaining<0?'var(--red)':remaining<7?'var(--amber)':'var(--ink-3)'}}>{remaining<0?`${Math.abs(remaining)}日超過`:`残${remaining}日`}</span>}
+              {hasKids&&<span className="t-count">{leafCount}</span>}
+              {hasKids&&<span className={"t-arrow"+(open?" t-arrow--open":"")}><Icon.chevron/></span>}
             </div>
           </div>
-          {isLeaf && node.setDate && (
+          {isLeaf&&node.setDate&&(
             <div className="t-card-bottom">
-              <span className="t-meta">設定 {formatShortDate(node.setDate)}{node.deadline && ` → 期限 ${formatShortDate(node.deadline)}`}</span>
-              {node.progress !== undefined && (
+              <span className="t-meta">設定 {formatShortDate(node.setDate)}{node.deadline&&` → 期限 ${formatShortDate(node.deadline)}`}</span>
+              {node.progress!==undefined&&(
                 <div className="t-mini-progress">
-                  <div className="t-mini-track"><div className="t-mini-fill" style={{
-                    width: node.progress+"%",
-                    background: isWarn ? 'var(--amber)' : node.progress > 60 ? 'var(--green)' : 'var(--blue)',
-                  }}/></div>
+                  <div className="t-mini-track"><div className="t-mini-fill" style={{width:node.progress+"%",background:isWarn?'var(--amber)':node.progress>60?'var(--green)':'var(--accent)'}}/></div>
                   <span className="t-mini-pct">{node.progress}%</span>
                 </div>
               )}
             </div>
           )}
         </div>
-        {hasKids && open && (
-          <div className="t-children">
-            {node.children.map((child,i)=>(
-              <TreeNode key={child.id} node={child} depth={depth+1} isLast={i===node.children.length-1}/>
-            ))}
-          </div>
+        {hasKids&&open&&(
+          <div className="t-children">{node.children.map((c,i)=><TreeNode key={c.id} node={c} depth={depth+1} isLast={i===node.children.length-1}/>)}</div>
         )}
       </div>
     </div>
   );
 }
 
-/* ─── パスポップアップ ─── */
+/* ── PathPopup ── */
 function PathPopup({show,title,path,onClose}){
-  if(!show) return null;
-  const levels = [
-    { label:"L1 大目標", color:"var(--blue)", bg:"var(--blue-light)" },
-    { label:"L2 中間目標", color:"var(--amber)", bg:"var(--amber-light)" },
-  ];
-  return (
-    <div className="overlay" onClick={onClose}>
-      <div className="modal" onClick={e=>e.stopPropagation()}>
-        <div className="modal-head">
-          <div>
-            <div className="modal-title">ゴールパス</div>
-            <div className="modal-sub">上位ゴールからフォーカスゴールまでの経路</div>
-          </div>
-          <button className="modal-close" onClick={onClose}><Icon.close/></button>
-        </div>
-        <div className="path-list">
-          {(path||[]).map((p,i)=>(
-            <div key={i} className="path-item">
-              <div className="path-rail">
-                <div className="path-dot" style={{background:levels[i]?.color||'var(--amber)'}}/>
-                <div className="path-line"/>
-              </div>
-              <div className="path-body">
-                <span className="path-label" style={{color:levels[i]?.color||'var(--amber)'}}>{levels[i]?.label||'L2'}</span>
-                <span className="path-text">{p}</span>
-              </div>
-            </div>
-          ))}
-          <div className="path-item">
-            <div className="path-rail">
-              <div className="path-dot" style={{background:'var(--green)'}}/>
-            </div>
-            <div className="path-body path-body--leaf">
-              <span className="path-label" style={{color:'var(--green)'}}>L3 フォーカスゴール</span>
-              <span className="path-text">{title}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ─── ゴールカード ─── */
-function GoalCard({goal,onConfirm,onPath,delay=0}){
-  const [vis,setVis]=useState(false);
-  useEffect(()=>{const t=setTimeout(()=>setVis(true),delay);return()=>clearTimeout(t);},[delay]);
-  const isWarn = goal.status==="warning"||goal.alertKey;
-  const alertText = goal.alertKey ? getAlertTextDynamic(goal.alertKey, goal.setDate) : '';
-
-  return (
-    <div className={"g-card"+(isWarn?" g-card--warn":"")} style={{
-      opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(8px)",transition:"opacity 0.4s ease, transform 0.4s ease",
-    }}>
-      <div className="g-info">
-        <div className="g-title">{goal.title}</div>
-        {alertText && <div className="g-alert"><Icon.alert style={{width:11,height:11}}/> {alertText}</div>}
-        <div className="g-meta">{formatShortDate(goal.setDate)} → {formatShortDate(goal.deadline)}</div>
-      </div>
-      <ProgressRow deadline={goal.deadline} progress={goal.progress} isWarn={isWarn}/>
-      <div className="g-actions">
-        <button className="g-btn g-btn--path" onClick={()=>onPath(goal)}>
-          <Icon.route/> パス照会
-        </button>
-        {isWarn && (
-          <button className={"g-btn g-btn--ack"+(goal.confirmed?" g-btn--acked":"")} onClick={()=>onConfirm(goal.id)}>
-            <Icon.check/> {goal.confirmed?"確認済み":"確認する"}
-          </button>
-        )}
-        <button className="g-btn g-btn--detail">
-          詳細 <Icon.external/>
-        </button>
-      </div>
-    </div>
-  );
-}
-
-/* ─── LINE Phone Mockup ─── */
-function LINEPhone({children}){
-  return (
-    <div className="phone-wrap">
-      <div className="phone-frame">
-        <div className="phone-status">
-          <span className="phone-time">9:50</span>
-          <div className="phone-island"/>
-          <div className="phone-status-right">
-            <svg width="15" height="11" viewBox="0 0 15 11"><path d="M1 8h1.5v3H1zM4 5.5h1.5v5.5H4zM7 3h1.5v8H7zM10 .5h1.5V11H10z" fill="currentColor"/></svg>
-            <svg width="14" height="11" viewBox="0 0 14 11"><path d="M.5 7.5a6 6 0 0110.5 0" fill="none" stroke="currentColor" strokeWidth="1.2"/><path d="M2.5 9a3.5 3.5 0 016.5 0" fill="none" stroke="currentColor" strokeWidth="1.2"/><circle cx="5.75" cy="10" r="1" fill="currentColor"/></svg>
-            <div className="phone-battery"><div className="phone-battery-fill"/></div>
-          </div>
-        </div>
-        <div className="line-nav">
-          <div className="line-nav-left"><svg width="10" height="16" viewBox="0 0 10 16" fill="none"><path d="M8.5 1.5L2 8l6.5 6.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></div>
-          <div className="line-nav-center"><div className="line-nav-name">フォーカスゴール通知</div></div>
-          <div className="line-nav-right"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M15 9.5H3M15 5H3M15 14H3" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/></svg></div>
-        </div>
-        <div className="line-chat">
-          <div className="line-date-pill">{TODAY_JP}</div>
-          <div className="line-msg-row">
-            <div className="line-avatar-circle"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 14.5c0-3 3-5 7-5s7 2 7 5" stroke="#fff" strokeWidth="1.2"/><circle cx="8" cy="5" r="3.5" stroke="#fff" strokeWidth="1.2"/></svg></div>
-            <div className="line-msg-col">
-              <div className="line-sender">ゴール通知Bot</div>
-              <div className="line-bubble-wrap"><div className="line-bubble-body">{children}</div><div className="line-read-time"><span className="line-read">既読</span><span>9:50</span></div></div>
-            </div>
-          </div>
-        </div>
-        <div className="line-input-bar"><div className="line-input-plus">+</div><div className="line-input-field">メッセージを入力</div><div className="line-input-mic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5.5" y="1" width="5" height="8" rx="2.5" stroke="#999" strokeWidth="1.2"/><path d="M3 7.5a5 5 0 0010 0M8 13v2" stroke="#999" strokeWidth="1.2" strokeLinecap="round"/></svg></div></div>
-        <div className="phone-home-bar"><div className="phone-home-indicator"/></div>
-      </div>
-    </div>
-  );
-}
-
-/* ─── ダークモード切り替え ─── */
-function DarkModeSwitch({dark, onToggle}){
-  return (
-    <button className="dm-switch" onClick={onToggle} title={dark ? "ライトモードに切替" : "ダークモードに切替"}>
-      {dark ? <Icon.sun style={{color:'var(--amber)'}}/> : <Icon.moon style={{color:'var(--ink-3)'}}/>}
-      <span className="dm-label">{dark ? "ライト" : "ダーク"}</span>
-    </button>
-  );
-}
-
-/* ─── ヘルプガイド ─── */
-function HelpGuide({show,onClose}){
-  const [section,setSection]=useState(0);
-  if(!show) return null;
-
-  const sections = [
-    {
-      title: "このアプリについて",
-      icon: "🎯",
-      content: (
-        <div className="help-section">
-          <p className="help-text">
-            <strong>フォーカスゴール</strong>は、あなたのゴールツリーの末端（＝これ以上分解されていない具体的なゴール）を一覧し、毎日の進捗管理を支援するアプリです。
-          </p>
-          <div className="help-box">
-            <div className="help-box-title">3つの画面</div>
-            <div className="help-box-item"><span className="help-badge">今日のゴール</span>フォーカスゴールをカード形式で一覧</div>
-            <div className="help-box-item"><span className="help-badge">ゴールツリー</span>上位目標〜末端までの階層構造を表示</div>
-            <div className="help-box-item"><span className="help-badge">LINE通知</span>毎朝届くLINE通知のプレビュー</div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "ゴールカードの見方",
-      icon: "📋",
-      content: (
-        <div className="help-section">
-          <div className="help-box">
-            <div className="help-box-title">カード内の情報</div>
-            <div className="help-box-item"><span className="help-badge" style={{background:'var(--green-light)',color:'var(--green)'}}>タイトル</span>フォーカスゴールの名前</div>
-            <div className="help-box-item"><span className="help-badge" style={{background:'var(--surface-3)',color:'var(--ink-3)'}}>01/30 → 03/15</span>設定日 → 期限日</div>
-            <div className="help-box-item"><span className="help-badge" style={{background:'var(--blue-light)',color:'var(--blue)'}}>進捗バー</span>現在の進捗率（%）</div>
-            <div className="help-box-item"><span className="help-badge" style={{background:'var(--amber-light)',color:'var(--amber)'}}>残○日 / ○日超過</span>期限までの残日数（超過時は赤表示）</div>
-          </div>
-          <div className="help-box" style={{marginTop:12}}>
-            <div className="help-box-title">注意マーク（⚠️）の意味</div>
-            <div className="help-box-item"><span className="help-chip help-chip--amber">○日間更新なし</span>長期間進捗が更新されていない</div>
-            <div className="help-box-item"><span className="help-chip help-chip--amber">粒度が粗い</span>もう少し具体的に分解できる可能性</div>
-            <div className="help-box-item"><span className="help-chip help-chip--red">期限超過</span>期限を過ぎている</div>
-            <div className="help-box-item"><span className="help-chip help-chip--amber">ペース遅れ</span>残り期間に対して進捗が遅い</div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "操作ガイド",
-      icon: "🔧",
-      content: (
-        <div className="help-section">
-          <div className="help-box">
-            <div className="help-box-title">カードのボタン</div>
-            <div className="help-box-item"><span className="help-badge" style={{background:'var(--surface-3)',color:'var(--ink-3)'}}>パス照会</span>上位ゴールからの経路（パス）を確認</div>
-            <div className="help-box-item"><span className="help-badge" style={{background:'var(--amber-light)',color:'var(--amber)'}}>確認する</span>注意項目を確認済みにする（トグル）</div>
-            <div className="help-box-item"><span className="help-badge" style={{background:'var(--surface-3)',color:'var(--ink-3)'}}>詳細</span>ゴールの詳細画面を開く</div>
-          </div>
-          <div className="help-box" style={{marginTop:12}}>
-            <div className="help-box-title">ソート（並び替え）</div>
-            <div className="help-box-item"><span className="help-badge">期限順 ↑↓</span>期限が近い順 / 遠い順</div>
-            <div className="help-box-item"><span className="help-badge">進捗順 ↑↓</span>進捗が低い順 / 高い順</div>
-            <p className="help-note">同じボタンをタップすると昇順 ↔ 降順を切り替えます</p>
-          </div>
-          <div className="help-box" style={{marginTop:12}}>
-            <div className="help-box-title">その他の機能</div>
-            <div className="help-box-item"><span className="help-badge">🌙 ダークモード</span>ヘッダー右の月/太陽アイコンで切替</div>
-            <div className="help-box-item"><span className="help-badge">注目ポイント</span>AIが自動検知した今日注力すべき項目</div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "ゴールツリーの見方",
-      icon: "🌲",
-      content: (
-        <div className="help-section">
-          <div className="help-box">
-            <div className="help-box-title">階層レベル</div>
-            <div className="help-box-item"><span className="help-chip" style={{background:'var(--green-light)',color:'var(--green)'}}>ROOT</span>全体ゴール（最上位）</div>
-            <div className="help-box-item"><span className="help-chip" style={{background:'var(--blue-light)',color:'var(--blue)'}}>L1</span>大目標</div>
-            <div className="help-box-item"><span className="help-chip" style={{background:'var(--amber-light)',color:'var(--amber)'}}>L2</span>中間目標</div>
-            <div className="help-box-item"><span className="help-chip" style={{background:'var(--green-light)',color:'var(--green)'}}>L3</span>フォーカスゴール（末端）</div>
-          </div>
-          <p className="help-text" style={{marginTop:12}}>親ノードをタップすると子ノードを展開/折りたたみできます。右端の数字はその下にあるフォーカスゴール数です。</p>
-        </div>
-      ),
-    },
-    {
-      title: "LINE通知について",
-      icon: "💬",
-      content: (
-        <div className="help-section">
-          <p className="help-text">毎朝 9:50 に自動でLINEに届く通知のプレビューです。実際の運用では以下が送られます。</p>
-          <div className="help-box">
-            <div className="help-box-title">通知内容</div>
-            <div className="help-box-item"><span className="help-badge">ゴール一覧</span>期限が近い順にフォーカスゴールを表示</div>
-            <div className="help-box-item"><span className="help-badge">残日数</span>各ゴールの期限までの残り日数</div>
-            <div className="help-box-item"><span className="help-badge">注目ポイント</span>AIが検知した今日の推奨アクション</div>
-            <div className="help-box-item"><span className="help-badge">Webリンク</span>タップでこのWebアプリを開く</div>
-          </div>
-        </div>
-      ),
-    },
-  ];
-
+  if(!show)return null;
+  const levels=[{label:"L1 大目標",color:"var(--blue)",bg:"var(--blue-light)"},{label:"L2 中間目標",color:"var(--amber)",bg:"var(--amber-light)"}];
   return(
     <div className="overlay" onClick={onClose}>
-      <div className="help-modal" onClick={e=>e.stopPropagation()}>
-        <div className="help-modal-head">
-          <div className="help-modal-title">使い方ガイド</div>
-          <button className="modal-close" onClick={onClose}><Icon.close/></button>
-        </div>
-        <div className="help-tabs">
-          {sections.map((s,i)=>(
-            <button key={i} className={"help-tab"+(section===i?" help-tab--active":"")} onClick={()=>setSection(i)}>
-              <span className="help-tab-icon">{s.icon}</span>
-              <span className="help-tab-label">{s.title}</span>
-            </button>
+      <div className="modal" onClick={e=>e.stopPropagation()}>
+        <div className="modal-head"><div><div className="modal-title">ゴールパス</div><div className="modal-sub">上位ゴールからフォーカスゴールまでの経路</div></div>
+          <button className="modal-close" onClick={onClose}><Icon.close/></button></div>
+        <div className="path-list">
+          {(path||[]).map((p,i)=>(
+            <div key={i} className="path-item"><div className="path-rail"><div className="path-dot" style={{background:levels[i]?.color||'var(--amber)'}}/><div className="path-line"/></div>
+              <div className="path-body"><span className="path-label" style={{color:levels[i]?.color||'var(--amber)'}}>{levels[i]?.label||'L2'}</span><span className="path-text">{p}</span></div></div>
           ))}
-        </div>
-        <div className="help-content">
-          {sections[section].content}
-        </div>
-        <div className="help-footer">
-          <div className="help-dots">
-            {sections.map((_,i)=><span key={i} className={"help-dot"+(section===i?" help-dot--active":"")} onClick={()=>setSection(i)}/>)}
-          </div>
-          <div className="help-nav-btns">
-            {section>0 && <button className="help-nav-btn" onClick={()=>setSection(s=>s-1)}>← 前へ</button>}
-            {section<sections.length-1
-              ? <button className="help-nav-btn help-nav-btn--primary" onClick={()=>setSection(s=>s+1)}>次へ →</button>
-              : <button className="help-nav-btn help-nav-btn--primary" onClick={onClose}>閉じる</button>
-            }
-          </div>
+          <div className="path-item"><div className="path-rail"><div className="path-dot" style={{background:'var(--green)'}}/></div>
+            <div className="path-body path-body--leaf"><span className="path-label" style={{color:'var(--green)'}}>L3 フォーカスゴール</span><span className="path-text">{title}</span></div></div>
         </div>
       </div>
     </div>
   );
 }
 
-/* ─── メインApp ─── */
+/* ── GoalCard (Nordic editorial style) ── */
+function GoalCard({goal,onConfirm,onPath,delay=0,index}){
+  const[vis,setVis]=useState(false);
+  useEffect(()=>{const t=setTimeout(()=>setVis(true),delay);return()=>clearTimeout(t);},[delay]);
+  const isWarn=goal.status==="warning"||goal.alertKey;
+  const alertText=goal.alertKey?getAlertTextDynamic(goal.alertKey,goal.setDate):'';
+  const remaining=calcRemainingDays(goal.deadline);
+  const isOverdue=remaining!==null&&remaining<0;
+  const pColor=isWarn?'var(--amber)':goal.progress>60?'var(--green)':'var(--accent)';
+
+  return(
+    <div className={"g-row"+(isWarn?" g-row--warn":"")+(index%2===0?"":" g-row--stripe")} style={{opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(6px)",transition:"opacity 0.35s ease,transform 0.35s ease"}}>
+      <div className="g-num">{String(index+1).padStart(2,'0')}</div>
+      <div className="g-main">
+        <div className="g-top">
+          <div className="g-info">
+            <div className="g-title">{goal.title}</div>
+            {alertText&&<div className="g-alert"><Icon.alert style={{width:11,height:11}}/> {alertText}</div>}
+            <div className="g-path">{goal.path.join(' › ')}</div>
+          </div>
+          <div className="g-stats">
+            <CircleProgress value={goal.progress} size={46} stroke={2.5} color={pColor}/>
+            <div className="g-days" style={{color:isOverdue?'var(--red)':remaining!==null&&remaining<7?'var(--amber)':'var(--ink-3)'}}>
+              {isOverdue?`${Math.abs(remaining)}日超過`:remaining!==null?`残${remaining}日`:''}
+            </div>
+          </div>
+        </div>
+        <div className="g-actions">
+          <button className="g-btn g-btn--path" onClick={()=>onPath(goal)}><Icon.route/> パス照会</button>
+          {isWarn&&<button className={"g-btn g-btn--ack"+(goal.confirmed?" g-btn--acked":"")} onClick={()=>onConfirm(goal.id)}><Icon.check/> {goal.confirmed?"確認済み":"確認する"}</button>}
+          <button className="g-btn g-btn--detail">詳細 <Icon.external/></button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── LINE Phone ── */
+function LINEPhone({children}){
+  return(
+    <div className="phone-wrap"><div className="phone-frame">
+      <div className="phone-status"><span className="phone-time">9:50</span><div className="phone-island"/><div className="phone-status-right"><div className="phone-battery"><div className="phone-battery-fill"/></div></div></div>
+      <div className="line-nav"><div className="line-nav-left"><svg width="10" height="16" viewBox="0 0 10 16" fill="none"><path d="M8.5 1.5L2 8l6.5 6.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></div><div className="line-nav-center"><div className="line-nav-name">フォーカスゴール通知</div></div><div style={{width:24}}/></div>
+      <div className="line-chat"><div className="line-date-pill">{TODAY_JP}</div>
+        <div className="line-msg-row"><div className="line-avatar-circle"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 14.5c0-3 3-5 7-5s7 2 7 5" stroke="#fff" strokeWidth="1.2"/><circle cx="8" cy="5" r="3.5" stroke="#fff" strokeWidth="1.2"/></svg></div>
+          <div className="line-msg-col"><div className="line-sender">ゴール通知Bot</div><div className="line-bubble-wrap"><div className="line-bubble-body">{children}</div><div className="line-read-time"><span className="line-read">既読</span><span>9:50</span></div></div></div>
+        </div>
+      </div>
+      <div className="line-input-bar"><div className="line-input-plus">+</div><div className="line-input-field">メッセージを入力</div></div>
+      <div className="phone-home-bar"><div className="phone-home-indicator"/></div>
+    </div></div>
+  );
+}
+
+/* ── HelpGuide ── */
+function HelpGuide({show,onClose}){
+  const[section,setSection]=useState(0);
+  if(!show)return null;
+  const sections=[
+    {title:"このアプリについて",icon:"🎯",content:(<div className="help-section"><p className="help-text"><strong>フォーカスゴール</strong>は、ゴールツリーの末端（具体的なゴール）を一覧し、毎日の進捗管理を支援するアプリです。</p><div className="help-box"><div className="help-box-title">3つの画面</div><div className="help-box-item"><span className="help-badge">今日のゴール</span>フォーカスゴールをカード形式で一覧</div><div className="help-box-item"><span className="help-badge">ゴールツリー</span>上位目標〜末端までの階層構造を表示</div><div className="help-box-item"><span className="help-badge">LINE通知</span>毎朝届くLINE通知のプレビュー</div></div></div>)},
+    {title:"ゴールカードの見方",icon:"📋",content:(<div className="help-section"><div className="help-box"><div className="help-box-title">カード内の情報</div><div className="help-box-item"><span className="help-badge" style={{background:'var(--green-light)',color:'var(--green)'}}>タイトル</span>フォーカスゴールの名前</div><div className="help-box-item"><span className="help-badge" style={{background:'var(--surface-3)',color:'var(--ink-3)'}}>円形グラフ</span>現在の進捗率（%）</div><div className="help-box-item"><span className="help-badge" style={{background:'var(--amber-light)',color:'var(--amber)'}}>残○日 / ○日超過</span>期限までの残日数</div></div><div className="help-box" style={{marginTop:12}}><div className="help-box-title">注意マーク（⚠️）の意味</div><div className="help-box-item"><span className="help-chip help-chip--amber">○日間更新なし</span>長期間進捗が更新されていない</div><div className="help-box-item"><span className="help-chip help-chip--amber">粒度が粗い</span>もう少し具体的に分解できる可能性</div><div className="help-box-item"><span className="help-chip help-chip--red">期限超過</span>期限を過ぎている</div></div></div>)},
+    {title:"操作ガイド",icon:"🔧",content:(<div className="help-section"><div className="help-box"><div className="help-box-title">カードのボタン</div><div className="help-box-item"><span className="help-badge">パス照会</span>上位ゴールからの経路を確認</div><div className="help-box-item"><span className="help-badge" style={{background:'var(--amber-light)',color:'var(--amber)'}}>確認する</span>注意項目を確認済みにする</div><div className="help-box-item"><span className="help-badge">詳細</span>ゴールの詳細画面を開く</div></div><div className="help-box" style={{marginTop:12}}><div className="help-box-title">その他</div><div className="help-box-item"><span className="help-badge">期限順 / 進捗順</span>ソートボタンで並び替え</div><div className="help-box-item"><span className="help-badge">🌙 ダークモード</span>ヘッダー右のアイコンで切替</div></div></div>)},
+    {title:"ゴールツリー",icon:"🌲",content:(<div className="help-section"><div className="help-box"><div className="help-box-title">階層レベル</div><div className="help-box-item"><span className="help-chip" style={{background:'var(--green-light)',color:'var(--green)'}}>ROOT</span>全体ゴール（最上位）</div><div className="help-box-item"><span className="help-chip" style={{background:'var(--blue-light)',color:'var(--blue)'}}>L1</span>大目標</div><div className="help-box-item"><span className="help-chip" style={{background:'var(--amber-light)',color:'var(--amber)'}}>L2</span>中間目標</div><div className="help-box-item"><span className="help-chip" style={{background:'var(--green-light)',color:'var(--green)'}}>L3</span>フォーカスゴール（末端）</div></div><p className="help-text" style={{marginTop:12}}>親ノードをタップで展開/折りたたみ。右端の数字はフォーカスゴール数。</p></div>)},
+    {title:"LINE通知",icon:"💬",content:(<div className="help-section"><p className="help-text">毎朝 9:50 に届く通知のプレビューです。</p><div className="help-box"><div className="help-box-title">通知内容</div><div className="help-box-item"><span className="help-badge">ゴール一覧</span>期限近い順にフォーカスゴールを表示</div><div className="help-box-item"><span className="help-badge">注目ポイント</span>AI検知の推奨アクション</div><div className="help-box-item"><span className="help-badge">Webリンク</span>タップでWebアプリを開く</div></div></div>)},
+  ];
+  return(
+    <div className="overlay" onClick={onClose}><div className="help-modal" onClick={e=>e.stopPropagation()}>
+      <div className="help-modal-head"><div className="help-modal-title">使い方ガイド</div><button className="modal-close" onClick={onClose}><Icon.close/></button></div>
+      <div className="help-tabs">{sections.map((s,i)=>(<button key={i} className={"help-tab"+(section===i?" help-tab--active":"")} onClick={()=>setSection(i)}><span className="help-tab-icon">{s.icon}</span><span className="help-tab-label">{s.title}</span></button>))}</div>
+      <div className="help-content">{sections[section].content}</div>
+      <div className="help-footer"><div className="help-dots">{sections.map((_,i)=><span key={i} className={"help-dot"+(section===i?" help-dot--active":"")} onClick={()=>setSection(i)}/>)}</div>
+        <div className="help-nav-btns">{section>0&&<button className="help-nav-btn" onClick={()=>setSection(s=>s-1)}>← 前へ</button>}{section<sections.length-1?<button className="help-nav-btn help-nav-btn--primary" onClick={()=>setSection(s=>s+1)}>次へ →</button>:<button className="help-nav-btn help-nav-btn--primary" onClick={onClose}>閉じる</button>}</div>
+      </div>
+    </div></div>
+  );
+}
+
+/* ═══ Main App ═══ */
 function App(){
-  const [tab,setTab]=useState("home");
-  const [goals,setGoals]=useState(GOALS);
-  const [pathGoal,setPathGoal]=useState(null);
-  const [dark,setDark]=useState(false);
-  const [showHelp,setShowHelp]=useState(false);
+  const[tab,setTab]=useState("home");
+  const[goals,setGoals]=useState(GOALS);
+  const[pathGoal,setPathGoal]=useState(null);
+  const[dark,setDark]=useState(false);
+  const[showHelp,setShowHelp]=useState(false);
   const handleConfirm=useCallback(id=>{setGoals(p=>p.map(g=>g.id===id?{...g,confirmed:!g.confirmed}:g));},[]);
   const leafCount=useMemo(()=>countLeaves(TREE),[]);
   const alertCount=useMemo(()=>goals.filter(g=>g.alertKey).length,[goals]);
-  const toggleDark=useCallback(()=>{
-    setDark(d=>{
-      document.documentElement.setAttribute('data-theme',d?'light':'dark');
-      return !d;
-    });
-  },[]);
+  const toggleDark=useCallback(()=>{setDark(d=>{document.documentElement.setAttribute('data-theme',d?'light':'dark');return !d;});},[]);
+  const[sortBy,setSortBy]=useState('deadline');
+  const[sortDir,setSortDir]=useState('asc');
+  const toggleSort=useCallback(f=>{if(sortBy===f)setSortDir(d=>d==='asc'?'desc':'asc');else{setSortBy(f);setSortDir('asc');}},[sortBy]);
+  const sortedGoals=useMemo(()=>{const a=[...goals];a.sort((x,y)=>{let v;if(sortBy==='deadline'){const ra=calcRemainingDays(x.deadline)??999,rb=calcRemainingDays(y.deadline)??999;v=ra-rb;}else{v=(x.progress||0)-(y.progress||0);}return sortDir==='asc'?v:-v;});return a;},[goals,sortBy,sortDir]);
+  const lineGoals=useMemo(()=>[...goals].sort((a,b)=>(calcRemainingDays(a.deadline)??999)-(calcRemainingDays(b.deadline)??999)),[goals]);
+  const tabs=[{id:"home",label:"今日のゴール"},{id:"tree",label:"ゴールツリー"},{id:"line",label:"LINE通知"}];
 
-  const alertGoals = useMemo(()=>goals.filter(g=>g.alertKey),[goals]);
+  const avgProgress=useMemo(()=>goals.length>0?Math.round(goals.reduce((s,g)=>s+(g.progress||0),0)/goals.length):0,[goals]);
 
-  /* ── ソート ── */
-  const [sortBy,setSortBy]=useState('deadline'); // 'deadline' | 'progress'
-  const [sortDir,setSortDir]=useState('asc');     // 'asc' | 'desc'
-  const toggleSort=useCallback((field)=>{
-    if(sortBy===field) setSortDir(d=>d==='asc'?'desc':'asc');
-    else { setSortBy(field); setSortDir('asc'); }
-  },[sortBy]);
-
-  const sortedGoals = useMemo(()=>{
-    const arr=[...goals];
-    arr.sort((a,b)=>{
-      let v;
-      if(sortBy==='deadline'){
-        const ra=calcRemainingDays(a.deadline)??999, rb=calcRemainingDays(b.deadline)??999;
-        v=ra-rb;
-      } else {
-        v=(a.progress||0)-(b.progress||0);
-      }
-      return sortDir==='asc'?v:-v;
-    });
-    return arr;
-  },[goals,sortBy,sortDir]);
-
-  /* LINE用: 期限近い順（固定） */
-  const lineGoals = useMemo(()=>{
-    return [...goals].sort((a,b)=>{
-      const ra=calcRemainingDays(a.deadline)??999, rb=calcRemainingDays(b.deadline)??999;
-      return ra-rb;
-    });
-  },[goals]);
-
-  const tabs=[
-    {id:"home",label:"今日のゴール"},
-    {id:"tree",label:"ゴールツリー"},
-    {id:"line",label:"LINE通知"},
-  ];
-
-  return (
+  return(
     <div className="app">
       <PathPopup show={pathGoal!==null} title={pathGoal?pathGoal.title:""} path={pathGoal?pathGoal.path:[]} onClose={()=>setPathGoal(null)}/>
       <HelpGuide show={showHelp} onClose={()=>setShowHelp(false)}/>
 
+      {/* ── Sticky Top Bar ── */}
+      <div className="sticky-top">
+
+      {/* ── Editorial Header ── */}
       <header className="header">
         <div className="container header-inner">
           <div className="header-left">
-            <div className="header-logo">
-              <div className="header-logo-mark">S</div>
-              <div>
-                <div className="header-name">星野舜</div>
-                <div className="header-dept">コーポレート</div>
-              </div>
+            <div className="header-brand">
+              <div className="header-brand-title">Focus Goals</div>
             </div>
           </div>
           <div className="header-right">
-            <div className="header-stat">
-              <span className="header-stat-num">{leafCount}</span>
-              <span className="header-stat-label">フォーカスゴール</span>
+            <div className="header-identity">
+              <div className="header-date">{TODAY_JP}</div>
+              <div className="header-name">星野 舜<span className="header-dept">コーポレート</span></div>
             </div>
-            <div className="header-stat-divider"/>
-            <div className="header-stat">
-              <span className="header-stat-num" style={{color:alertCount>0?'var(--amber)':'var(--green)'}}>{alertCount}</span>
-              <span className="header-stat-label">注意項目</span>
-            </div>
-            <DarkModeSwitch dark={dark} onToggle={toggleDark}/>
+            <button className="dm-switch" onClick={toggleDark} title={dark?"ライトモードに切替":"ダークモードに切替"}>
+              {dark?<Icon.sun style={{color:'var(--amber)'}}/>:<Icon.moon style={{color:'var(--ink-3)'}}/>}
+            </button>
             <button className="help-trigger" onClick={()=>setShowHelp(true)} title="使い方ガイド"><Icon.help/></button>
-            <div className="header-date">{TODAY_DISPLAY}</div>
           </div>
         </div>
       </header>
 
-      <nav className="nav">
-        <div className="container nav-inner">
-          {tabs.map(t=>(
-            <button key={t.id} className={"nav-btn"+(tab===t.id?" nav-btn--active":"")} onClick={()=>setTab(t.id)}>
-              {t.label}
-            </button>
+      {/* ── Metrics Strip ── */}
+      <div className="metrics-strip">
+        <div className="container metrics-inner">
+          {[
+            {label:"フォーカスゴール",value:leafCount,color:"var(--ink)"},
+            {label:"注意項目",value:alertCount,color:alertCount>0?"var(--amber)":"var(--green)"},
+            {label:"平均進捗",value:avgProgress+"%",color:"var(--accent)"},
+          ].map((m,i)=>(
+            <div key={i} className="metric-cell">
+              <div className="metric-value" style={{color:m.color}}>{m.value}</div>
+              <div className="metric-label">{m.label}</div>
+            </div>
           ))}
         </div>
-      </nav>
+      </div>
+
+      {/* ── Nav ── */}
+      <nav className="nav"><div className="container nav-inner">
+        {tabs.map(t=>(<button key={t.id} className={"nav-btn"+(tab===t.id?" nav-btn--active":"")} onClick={()=>setTab(t.id)}>{t.label}</button>))}
+      </div></nav>
+
+      </div>{/* end sticky-top */}
 
       <main className="main"><div className="container">
 
         {tab==="home"&&(
           <div className="page fade-in">
             <div className="insight-card">
-              <div className="insight-head">
-                <div className="insight-icon">!</div>
-                <span className="insight-title">注目ポイント</span>
+              <div className="insight-marker"/>
+              <div className="insight-content">
+                <div className="insight-label">注目ポイント</div>
+                <p className="insight-body">
+                  「<strong style={{color:'var(--amber)'}}>取引先のマスターデータを作る</strong>」がしばらく更新がありません。今日30分だけでもデータ項目の洗い出しに着手してみましょう。
+                </p>
               </div>
-              <p className="insight-body">
-                「<strong style={{color:'var(--amber)'}}>取引先のマスターデータを作る</strong>」がしばらく更新がありません。今日30分だけでもデータ項目の洗い出しに着手してみましょう。
-              </p>
             </div>
+
             <div className="sort-bar">
-              <button className={"sort-btn"+(sortBy==='deadline'?" sort-btn--active":"")} onClick={()=>toggleSort('deadline')}>
-                期限順 {sortBy==='deadline' && (sortDir==='asc'?<Icon.sortAsc/>:<Icon.sortDesc/>)}
-              </button>
-              <button className={"sort-btn"+(sortBy==='progress'?" sort-btn--active":"")} onClick={()=>toggleSort('progress')}>
-                進捗順 {sortBy==='progress' && (sortDir==='asc'?<Icon.sortAsc/>:<Icon.sortDesc/>)}
-              </button>
+              <div className="section-label">本日のフォーカス</div>
+              <div className="sort-buttons">
+                <button className={"sort-btn"+(sortBy==='deadline'?" sort-btn--active":"")} onClick={()=>toggleSort('deadline')}>
+                  期限順 {sortBy==='deadline'&&(sortDir==='asc'?<Icon.sortAsc/>:<Icon.sortDesc/>)}
+                </button>
+                <button className={"sort-btn"+(sortBy==='progress'?" sort-btn--active":"")} onClick={()=>toggleSort('progress')}>
+                  進捗順 {sortBy==='progress'&&(sortDir==='asc'?<Icon.sortAsc/>:<Icon.sortDesc/>)}
+                </button>
+              </div>
             </div>
+
             <div className="goal-list">
-              {sortedGoals.map((g,i)=><GoalCard key={g.id} goal={g} onConfirm={handleConfirm} onPath={gl=>setPathGoal(gl)} delay={i*50+80}/>)}
+              {sortedGoals.map((g,i)=><GoalCard key={g.id} goal={g} index={i} onConfirm={handleConfirm} onPath={gl=>setPathGoal(gl)} delay={i*45+80}/>)}
             </div>
           </div>
         )}
 
         {tab==="tree"&&(
           <div className="page fade-in">
-            <div className="tree-legend">
-              {LEVEL_META.map((m,i)=>(
-                <span key={i} className="legend-chip">
-                  <span className="legend-dot" style={{background:m.color}}/>{m.tag}
-                </span>
-              ))}
-              <span className="legend-chip">
-                <span className="legend-dot" style={{background:'var(--amber)'}}/> 注意
-              </span>
-            </div>
-            <div className="tree-root">
-              <div className="tree-root-inner">
-                <span className="t-tag" style={{background:'var(--green-light)',color:'var(--green)'}}>ROOT</span>
-                <span className="tree-root-title">星野舜 全体ゴール</span>
-                <span className="tree-root-sub">3本柱 → フォーカス{leafCount}件</span>
-              </div>
-            </div>
-            <div className="tree-container">
-              {TREE.children.map((child,i)=>(
-                <TreeNode key={child.id} node={child} depth={1} isLast={i===TREE.children.length-1}/>
-              ))}
-            </div>
+            <div className="tree-legend">{LEVEL_META.map((m,i)=>(<span key={i} className="legend-chip"><span className="legend-dot" style={{background:m.color}}/>{m.tag}</span>))}<span className="legend-chip"><span className="legend-dot" style={{background:'var(--amber)'}}/> 注意</span></div>
+            <div className="tree-root"><div className="tree-root-inner"><span className="t-tag" style={{background:'var(--green-light)',color:'var(--green)'}}>ROOT</span><span className="tree-root-title">星野舜 全体ゴール</span><span className="tree-root-sub">3本柱 → フォーカス{leafCount}件</span></div></div>
+            <div className="tree-container">{TREE.children.map((c,i)=><TreeNode key={c.id} node={c} depth={1} isLast={i===TREE.children.length-1}/>)}</div>
           </div>
         )}
 
         {tab==="line"&&(
           <div className="page fade-in">
-            <p style={{textAlign:'center',color:'var(--ink-3)',fontSize:13,marginBottom:20}}>毎朝 9:50 にプッシュ通知で届くイメージ</p>
+            <p style={{textAlign:'center',color:'var(--ink-3)',fontSize:13,marginBottom:20,fontFamily:'var(--font-sans)'}}>毎朝 9:50 にプッシュ通知で届くイメージ</p>
             <LINEPhone>
               <div className="lb-head">おはようございます、星野さん</div>
               <div className="lb-greet">今日のフォーカスゴール {goals.length}件（期限順）</div>
-              {lineGoals.map((g,i)=>{
-                const remaining=calcRemainingDays(g.deadline);
-                const isW=g.status==="warning"||g.alertKey;
-                return(
-                  <div key={i} className={"lb-line-item"+(isW?" lb-line-item--warn":"")}>
-                    <span className="lb-line-title">{g.title}</span>
-                    <span className={"lb-line-days"} style={{color: remaining!==null&&remaining<0?'#c44':remaining!==null&&remaining<7?'#b8860b':'#999'}}>
-                      {remaining!==null && (remaining<0?`${Math.abs(remaining)}日超過`:`残${remaining}日`)}
-                    </span>
-                  </div>
-                );
+              {lineGoals.map((g,i)=>{const r=calcRemainingDays(g.deadline);const isW=g.status==="warning"||g.alertKey;return(
+                <div key={i} className={"lb-line-item"+(isW?" lb-line-item--warn":"")}>
+                  <span className="lb-line-title">{g.title}</span>
+                  <span className="lb-line-days" style={{color:r!==null&&r<0?'#c44':r!==null&&r<7?'#b8860b':'#999'}}>{r!==null&&(r<0?`${Math.abs(r)}日超過`:`残${r}日`)}</span>
+                </div>);
               })}
-              <div className="lb-suggest">
-                <div className="lb-suggest-label">注目ポイント</div>
-                <div className="lb-suggest-text">「取引先マスターデータ」がしばらく更新されていません。今日30分、データ項目の洗い出しを。</div>
-              </div>
-              <div className="lb-btns">
-                <div className="lb-btn lb-btn--primary">Webで詳細を見る →</div>
-              </div>
+              <div className="lb-suggest"><div className="lb-suggest-label">注目ポイント</div><div className="lb-suggest-text">「取引先マスターデータ」がしばらく更新されていません。今日30分、データ項目の洗い出しを。</div></div>
+              <div className="lb-btns"><div className="lb-btn lb-btn--primary">Webで詳細を見る →</div></div>
             </LINEPhone>
           </div>
         )}
 
       </div></main>
+
+      <footer className="footer"><div className="container footer-inner">
+        <span>ADDNESS FOCUS GOAL SYSTEM</span><span>v2.0</span>
+      </div></footer>
     </div>
   );
 }
@@ -754,183 +491,182 @@ ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
 </script>
 
 <style>
-/* ═══ Header ═══ */
-.header{background:var(--surface);border-bottom:1px solid var(--surface-3);padding:14px 0;transition:background 0.3s,border-color 0.3s;}
+/* ═══ Header — Editorial ═══ */
+.header{padding:12px 0 10px;border-bottom:var(--border-thick);transition:border-color 0.4s;}
 .header-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-.header-left{display:flex;align-items:center;gap:14px;}
-.header-logo{display:flex;align-items:center;gap:10px;}
-.header-logo-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#1a7a42,#2d9a56);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;letter-spacing:-0.5px;}
-.header-name{font-size:15px;font-weight:800;color:var(--ink);line-height:1.2;}
-.header-dept{font-size:11px;color:var(--ink-3);font-weight:400;}
+.header-brand-label{font-size:9px;font-weight:700;letter-spacing:4px;color:var(--accent);text-transform:uppercase;font-family:var(--font-sans);}
+.header-brand-title{font-size:24px;font-weight:300;color:var(--ink);line-height:1.1;letter-spacing:-1px;font-style:italic;}
 .header-right{display:flex;align-items:center;gap:14px;}
-.header-stat{display:flex;flex-direction:column;align-items:center;}
-.header-stat-num{font-size:20px;font-weight:900;color:var(--ink);line-height:1;}
-.header-stat-label{font-size:9px;color:var(--ink-4);font-weight:500;margin-top:2px;}
-.header-stat-divider{width:1px;height:24px;background:var(--surface-3);}
-.header-date{font-size:11px;color:var(--ink-4);font-weight:400;font-variant-numeric:tabular-nums;}
-@media(min-width:768px){.header{padding:18px 0;}.header-logo-mark{width:40px;height:40px;font-size:17px;}.header-name{font-size:17px;}.header-stat-num{font-size:24px;}}
+.header-identity{text-align:right;}
+.header-date{font-size:10px;color:var(--ink-3);font-family:var(--font-sans);}
+.header-name{font-size:17px;font-weight:700;color:var(--ink);font-family:var(--font-sans);line-height:1.2;}
+.header-dept{font-size:11px;color:var(--ink-4);font-weight:400;margin-left:8px;}
+@media(min-width:768px){.header-brand-title{font-size:28px;}.header-name{font-size:19px;}}
 
-/* ═══ Dark Mode Switch ═══ */
-.dm-switch{display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:20px;border:1px solid var(--surface-3);background:var(--surface-2);cursor:pointer;font-family:var(--font);transition:all 0.2s;}
-.dm-switch:hover{border-color:var(--ink-5);background:var(--surface-3);}
-.dm-label{font-size:10px;font-weight:600;color:var(--ink-3);}
+.dm-switch{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:var(--border-thin);background:var(--surface-2);cursor:pointer;transition:all 0.2s;}
+.dm-switch:hover{border-color:var(--ink-4);background:var(--surface-3);}
+.help-trigger{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:var(--border-thin);background:var(--surface-2);cursor:pointer;color:var(--ink-3);transition:all 0.15s;flex-shrink:0;}
+.help-trigger:hover{border-color:var(--ink-4);background:var(--surface-3);color:var(--ink);}
 
-/* ═══ Nav ═══ */
-.nav{background:var(--surface);border-bottom:1px solid var(--surface-3);position:sticky;top:0;z-index:50;transition:background 0.3s,border-color 0.3s;}
+/* ═══ Metrics Strip — Newspaper column ═══ */
+.metrics-strip{border-bottom:var(--border-thin);}
+.metrics-inner{display:grid;grid-template-columns:1fr 1fr 1fr;}
+.metric-cell{padding:10px 16px;text-align:center;border-right:var(--border-thin);}
+.metric-cell:last-child{border-right:none;}
+.metric-value{font-size:24px;font-weight:300;font-family:var(--font-sans);line-height:1;}
+.metric-label{font-size:8px;color:var(--ink-4);letter-spacing:1.5px;margin-top:4px;font-family:var(--font-sans);text-transform:uppercase;}
+@media(min-width:768px){.metric-value{font-size:28px;}}
+
+/* ═══ Sticky Top ═══ */
+.sticky-top{position:sticky;top:0;z-index:50;background:var(--surface);backdrop-filter:blur(12px);transition:background 0.4s;box-shadow:var(--shadow-sm);}
+
+/* ═══ Nav — Underline tabs ═══ */
+.nav{border-bottom:var(--border-thin);transition:background 0.4s,border-color 0.4s;}
 .nav-inner{display:flex;gap:0;}
-.nav-btn{flex:1;padding:11px 0;border:none;background:transparent;font-family:var(--font);font-size:13px;font-weight:500;color:var(--ink-4);cursor:pointer;position:relative;transition:color 0.2s;border-bottom:2px solid transparent;}
+.nav-btn{flex:1;padding:10px 0;border:none;background:transparent;font-family:var(--font-sans);font-size:12px;font-weight:500;color:var(--ink-4);cursor:pointer;border-bottom:2px solid transparent;transition:color 0.2s;letter-spacing:0.5px;}
 .nav-btn:hover{color:var(--ink-2);}
-.nav-btn--active{color:var(--ink);font-weight:700;border-bottom-color:var(--green);}
-@media(min-width:768px){.nav-btn{font-size:14px;padding:14px 0;}}
+.nav-btn--active{color:var(--accent);font-weight:700;border-bottom-color:var(--accent);}
+@media(min-width:768px){.nav-btn{font-size:13px;padding:12px 0;}}
 
 /* ═══ Main ═══ */
-.main{padding:20px 0 60px;}
-@media(min-width:768px){.main{padding:28px 0 80px;}}
+.main{padding:24px 0 60px;}
+@media(min-width:768px){.main{padding:32px 0 80px;}}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .fade-in{animation:fadeIn 0.3s ease forwards;}
 
-/* ═══ Insight Card ═══ */
-.insight-card{background:var(--surface);border:1px solid var(--surface-3);border-radius:var(--radius-lg);padding:16px 18px;margin-bottom:20px;box-shadow:var(--shadow-sm);transition:background 0.3s,border-color 0.3s;}
-.insight-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
-.insight-icon{width:20px;height:20px;border-radius:6px;background:var(--amber-light);color:var(--amber);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;}
-.insight-title{font-size:12px;font-weight:700;color:var(--ink-2);}
-.insight-body{font-size:13px;color:var(--ink-2);line-height:1.7;}
-@media(min-width:768px){.insight-card{padding:20px 24px;margin-bottom:24px;}.insight-body{font-size:14px;}}
-
-/* ═══ Goal Cards ═══ */
-.goal-list{display:flex;flex-direction:column;gap:10px;}
-@media(min-width:768px){.goal-list{gap:12px;}}
-.g-card{background:var(--surface);border:1px solid var(--surface-3);border-radius:var(--radius-lg);padding:16px 18px;box-shadow:var(--shadow-sm);transition:box-shadow 0.2s,background 0.3s,border-color 0.3s;}
-.g-card:hover{box-shadow:var(--shadow-md);}
-.g-card--warn{border-left:3px solid var(--amber);}
-.g-info{min-width:0;}
-.g-title{font-size:13px;font-weight:600;color:var(--ink);line-height:1.5;margin-bottom:2px;}
-.g-alert{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:var(--amber);font-weight:600;margin-bottom:2px;}
-.g-meta{font-size:10px;color:var(--ink-4);margin-top:2px;font-variant-numeric:tabular-nums;}
+/* ═══ Insight Card — Editorial callout ═══ */
+.insight-card{display:flex;gap:16px;padding:18px 20px;margin-bottom:24px;border-left:3px solid var(--accent);background:var(--card);border-radius:0 var(--radius-lg) var(--radius-lg) 0;box-shadow:var(--shadow-sm);transition:background 0.4s;}
+.insight-marker{width:2px;flex-shrink:0;}
+.insight-content{flex:1;}
+.insight-label{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:6px;font-family:var(--font-sans);}
+.insight-body{font-size:14px;color:var(--ink-2);line-height:1.7;}
+@media(min-width:768px){.insight-card{padding:22px 28px;}}
 
 /* ═══ Sort Bar ═══ */
-.sort-bar{display:flex;gap:6px;margin-bottom:12px;}
-.sort-btn{display:flex;align-items:center;gap:4px;padding:6px 12px;border-radius:8px;border:1px solid var(--surface-3);background:var(--surface);color:var(--ink-3);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all 0.15s;}
-.sort-btn:hover{border-color:var(--ink-5);background:var(--surface-2);}
-.sort-btn--active{color:var(--ink);border-color:var(--ink-5);background:var(--surface-2);}
+.sort-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:10px;border-bottom:var(--border-thin);}
+.section-label{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--ink-4);text-transform:uppercase;font-family:var(--font-sans);}
+.sort-buttons{display:flex;gap:6px;}
+.sort-btn{display:flex;align-items:center;gap:4px;padding:6px 12px;border-radius:6px;border:var(--border-thin);background:transparent;color:var(--ink-3);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--font-sans);transition:all 0.15s;}
+.sort-btn:hover{border-color:var(--ink-4);background:var(--surface-2);}
+.sort-btn--active{color:var(--ink);border-color:var(--ink-4);background:var(--surface-2);}
 
-/* ═══ Progress Row（1本バー + 残日数） ═══ */
-.progress-row{margin:10px 0;display:flex;align-items:center;gap:10px;}
-.progress-bar-wrap{flex:1;display:flex;align-items:center;gap:6px;min-width:0;}
-.progress-track{flex:1;height:5px;background:var(--surface-3);border-radius:3px;overflow:hidden;}
-.progress-fill{height:100%;border-radius:3px;transition:width 0.6s ease;}
-.progress-pct{font-size:11px;font-weight:800;width:32px;text-align:right;flex-shrink:0;font-variant-numeric:tabular-nums;}
-.progress-days{font-size:10px;font-weight:600;color:var(--ink-3);white-space:nowrap;flex-shrink:0;font-variant-numeric:tabular-nums;}
-.progress-days--overdue{color:var(--red);animation:overduePulse 2s ease-in-out infinite;}
-@keyframes overduePulse{0%,100%{opacity:1;}50%{opacity:0.6;}}
-
-.g-actions{display:flex;gap:6px;}
-.g-btn{padding:7px 12px;border-radius:8px;border:1px solid var(--surface-3);background:var(--surface);color:var(--ink-2);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:4px;transition:all 0.15s;white-space:nowrap;}
-.g-btn:hover{background:var(--surface-2);border-color:var(--ink-5);}
-.g-btn--path{color:var(--ink-3);}
+/* ═══ Goal Row — Editorial list with stripe ═══ */
+.goal-list{display:flex;flex-direction:column;}
+.g-row{display:flex;gap:14px;padding:16px 20px;border-left:3px solid transparent;transition:background 0.15s,border-color 0.3s;}
+.g-row--stripe{background:var(--stripe);}
+.g-row--warn{border-left-color:var(--amber);}
+.g-num{font-size:12px;color:var(--ink-4);font-family:var(--font-sans);font-variant-numeric:tabular-nums;width:24px;flex-shrink:0;padding-top:3px;font-weight:600;}
+.g-main{flex:1;min-width:0;}
+.g-top{display:flex;align-items:flex-start;gap:16px;}
+.g-info{flex:1;min-width:0;}
+.g-title{font-size:14px;color:var(--ink);line-height:1.55;font-weight:400;}
+.g-alert{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:var(--amber);font-weight:600;margin-top:4px;font-family:var(--font-sans);}
+.g-path{font-size:10px;color:var(--ink-4);margin-top:4px;font-family:var(--font-sans);}
+.g-stats{display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;}
+.g-days{font-size:10px;font-weight:600;font-family:var(--font-sans);font-variant-numeric:tabular-nums;white-space:nowrap;}
+.g-actions{display:flex;gap:6px;margin-top:10px;}
+.g-btn{padding:6px 12px;border-radius:6px;border:var(--border-thin);background:transparent;color:var(--ink-3);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--font-sans);display:flex;align-items:center;gap:4px;transition:all 0.15s;white-space:nowrap;}
+.g-btn:hover{background:var(--surface-2);border-color:var(--ink-4);}
 .g-btn--ack{background:var(--amber-light);border-color:var(--amber-muted);color:var(--amber);}
 .g-btn--ack:hover{background:var(--amber-muted);}
 .g-btn--acked{background:var(--green-light);border-color:var(--green-muted);color:var(--green);}
-.g-btn--detail{margin-left:auto;color:var(--ink-3);}
-@media(min-width:768px){.g-card{padding:20px 24px;}.g-title{font-size:14px;}.g-btn{font-size:12px;padding:8px 14px;}}
+.g-btn--detail{margin-left:auto;}
+@media(min-width:768px){.g-row{padding:18px 24px;}.g-title{font-size:15px;}}
+
+/* ═══ Progress Row ═══ */
+.progress-row{display:flex;align-items:center;gap:10px;}
+.progress-days{font-size:10px;font-weight:600;font-family:var(--font-sans);font-variant-numeric:tabular-nums;white-space:nowrap;}
 
 /* ═══ Tree ═══ */
 .tree-legend{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px;}
-.legend-chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--ink-3);font-weight:500;padding:4px 10px;border-radius:20px;background:var(--surface);border:1px solid var(--surface-3);transition:background 0.3s,border-color 0.3s;}
+.legend-chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--ink-3);font-weight:500;padding:4px 10px;border-radius:20px;background:var(--card);border:var(--border-thin);font-family:var(--font-sans);transition:background 0.3s;}
 .legend-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
-.tree-root{background:var(--surface);border:1px solid var(--surface-3);border-radius:var(--radius-lg);padding:14px 18px;margin-bottom:16px;box-shadow:var(--shadow-sm);transition:background 0.3s,border-color 0.3s;}
+.tree-root{background:var(--card);border:var(--border-thin);border-radius:var(--radius-lg);padding:14px 18px;margin-bottom:16px;box-shadow:var(--shadow-sm);transition:background 0.4s;}
 .tree-root-inner{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-.tree-root-title{font-size:14px;font-weight:800;color:var(--ink);}
-.tree-root-sub{font-size:11px;color:var(--ink-4);margin-left:auto;}
+.tree-root-title{font-size:14px;font-weight:800;color:var(--ink);font-family:var(--font-sans);}
+.tree-root-sub{font-size:11px;color:var(--ink-4);margin-left:auto;font-family:var(--font-sans);}
 .tree-container{padding-left:4px;}
-.t-item{display:flex;gap:0;}
-.t-rail{display:flex;flex-direction:column;align-items:center;width:20px;flex-shrink:0;padding-top:0;}
+.t-item{display:flex;}
+.t-rail{display:flex;flex-direction:column;align-items:center;width:20px;flex-shrink:0;}
 .t-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:16px;}
 .t-line{flex:1;width:1.5px;background:var(--surface-3);margin:2px 0;}
 .t-body{flex:1;min-width:0;padding-bottom:8px;}
-.t-card{background:var(--surface);border:1px solid var(--surface-3);border-radius:var(--radius);padding:10px 14px;margin-left:6px;transition:box-shadow 0.15s,border-color 0.15s,background 0.3s;}
+.t-card{background:var(--card);border:var(--border-thin);border-radius:var(--radius);padding:10px 14px;margin-left:6px;transition:box-shadow 0.15s,background 0.4s;}
 .t-card--parent{cursor:pointer;}
-.t-card--parent:hover{box-shadow:var(--shadow-sm);border-color:var(--ink-5);}
+.t-card--parent:hover{box-shadow:var(--shadow-sm);border-color:var(--ink-4);}
 .t-card--warn{border-left:3px solid var(--amber);background:var(--amber-light);}
 .t-card-top{display:flex;align-items:center;gap:6px;}
-.t-tag{font-size:9px;font-weight:800;padding:2px 7px;border-radius:6px;white-space:nowrap;flex-shrink:0;letter-spacing:0.3px;}
-.t-title{font-size:12px;font-weight:600;color:var(--ink);flex:1;min-width:0;line-height:1.5;}
+.t-tag{font-size:9px;font-weight:800;padding:2px 7px;border-radius:4px;white-space:nowrap;flex-shrink:0;letter-spacing:0.3px;font-family:var(--font-sans);}
+.t-title{font-size:12px;font-weight:600;color:var(--ink);flex:1;min-width:0;line-height:1.5;font-family:var(--font-sans);}
 .t-card--leaf .t-title{font-weight:400;color:var(--ink-2);}
 .t-card-right{display:flex;align-items:center;gap:6px;flex-shrink:0;}
-.t-alert{display:flex;align-items:center;gap:3px;font-size:10px;color:var(--amber);font-weight:600;white-space:nowrap;}
-.t-days{font-size:10px;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums;}
-.t-count{font-size:10px;font-weight:700;color:var(--ink-4);background:var(--surface-2);padding:1px 7px;border-radius:10px;}
+.t-alert{display:flex;align-items:center;gap:3px;font-size:10px;color:var(--amber);font-weight:600;white-space:nowrap;font-family:var(--font-sans);}
+.t-days{font-size:10px;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums;font-family:var(--font-sans);}
+.t-count{font-size:10px;font-weight:700;color:var(--ink-4);background:var(--surface-2);padding:1px 7px;border-radius:10px;font-family:var(--font-sans);}
 .t-arrow{color:var(--ink-4);transition:transform 0.2s;display:inline-flex;}
 .t-arrow--open{transform:rotate(90deg);}
 .t-card-bottom{margin-top:8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
-.t-meta{font-size:10px;color:var(--ink-3);white-space:nowrap;font-variant-numeric:tabular-nums;}
+.t-meta{font-size:10px;color:var(--ink-3);white-space:nowrap;font-variant-numeric:tabular-nums;font-family:var(--font-sans);}
 .t-mini-progress{display:flex;align-items:center;gap:4px;flex:1;min-width:80px;}
 .t-mini-track{flex:1;height:3px;background:var(--surface-3);border-radius:2px;overflow:hidden;}
 .t-mini-fill{height:100%;border-radius:2px;transition:width 0.6s ease;}
-.t-mini-pct{font-size:9px;font-weight:700;color:var(--ink-3);font-variant-numeric:tabular-nums;}
-.t-children{margin-top:0;padding-left:0;}
-@media(min-width:768px){.t-rail{width:24px;}.t-dot{width:10px;height:10px;margin-top:18px;}.t-card{padding:12px 18px;margin-left:10px;}.t-title{font-size:13px;}.tree-root{padding:16px 22px;}.tree-root-title{font-size:16px;}}
+.t-mini-pct{font-size:9px;font-weight:700;color:var(--ink-3);font-variant-numeric:tabular-nums;font-family:var(--font-sans);}
 
-/* ═══ Modal (Path) ═══ */
-.overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.3);backdrop-filter:blur(4px);z-index:999;display:flex;align-items:center;justify-content:center;padding:20px;}
-.modal{background:var(--surface);border-radius:16px;padding:24px;max-width:460px;width:100%;box-shadow:var(--shadow-lg);animation:fadeIn 0.25s ease;transition:background 0.3s;}
+/* ═══ Modal ═══ */
+.overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(42,36,24,0.25);backdrop-filter:blur(4px);z-index:999;display:flex;align-items:center;justify-content:center;padding:20px;}
+.modal{background:var(--card);border-radius:var(--radius-lg);padding:24px;max-width:460px;width:100%;box-shadow:var(--shadow-lg);animation:fadeIn 0.25s ease;transition:background 0.4s;border:var(--border-thin);}
 .modal-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;}
-.modal-title{font-size:16px;font-weight:800;color:var(--ink);}
-.modal-sub{font-size:11px;color:var(--ink-4);margin-top:2px;}
-.modal-close{background:none;border:none;color:var(--ink-4);cursor:pointer;padding:4px;border-radius:6px;transition:background 0.15s;}
+.modal-title{font-size:16px;font-weight:800;color:var(--ink);font-family:var(--font-sans);}
+.modal-sub{font-size:11px;color:var(--ink-4);margin-top:2px;font-family:var(--font-sans);}
+.modal-close{background:none;border:none;color:var(--ink-4);cursor:pointer;padding:4px;border-radius:6px;}
 .modal-close:hover{background:var(--surface-2);}
 .path-list{display:flex;flex-direction:column;}
-.path-item{display:flex;gap:0;}
+.path-item{display:flex;}
 .path-rail{display:flex;flex-direction:column;align-items:center;width:20px;flex-shrink:0;}
 .path-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:10px;}
 .path-line{flex:1;width:1.5px;background:var(--surface-3);margin:3px 0;}
-.path-body{flex:1;padding:8px 14px;margin-left:8px;margin-bottom:8px;border-radius:8px;background:var(--surface-2);border:1px solid var(--surface-3);transition:background 0.3s,border-color 0.3s;}
+.path-body{flex:1;padding:8px 14px;margin-left:8px;margin-bottom:8px;border-radius:var(--radius);background:var(--surface-2);border:var(--border-thin);transition:background 0.4s;}
 .path-body--leaf{background:var(--green-light);border-color:var(--green-muted);}
-.path-label{font-size:9px;font-weight:700;display:block;margin-bottom:2px;}
+.path-label{font-size:9px;font-weight:700;display:block;margin-bottom:2px;font-family:var(--font-sans);}
 .path-text{font-size:13px;color:var(--ink);font-weight:500;line-height:1.5;}
 .path-body--leaf .path-text{color:var(--green);font-weight:700;}
 
-/* ═══ iPhone + LINE Mockup（LINEは常にライトテーマ） ═══ */
+/* ═══ LINE Phone (always light) ═══ */
 .phone-wrap{display:flex;justify-content:center;padding:10px 0;}
-.phone-frame{width:320px;background:#8FBCBB;border-radius:40px;border:5px solid #1a1a1a;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,0.08) inset,0 20px 60px rgba(0,0,0,0.25),0 4px 12px rgba(0,0,0,0.12);position:relative;}
+.phone-frame{width:320px;background:#8FBCBB;border-radius:40px;border:5px solid #1a1a1a;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.2);position:relative;}
 @media(min-width:768px){.phone-frame{width:360px;}}
-.phone-status{display:flex;align-items:center;justify-content:space-between;padding:12px 24px 6px;font-size:13px;font-weight:600;color:#1a1a1a;background:linear-gradient(180deg,rgba(109,160,126,0.6) 0%,rgba(109,160,126,0) 100%);position:relative;}
-.phone-time{font-variant-numeric:tabular-nums;font-weight:700;}
+.phone-status{display:flex;align-items:center;justify-content:space-between;padding:12px 24px 6px;font-size:13px;font-weight:700;color:#1a1a1a;position:relative;}
+.phone-time{font-variant-numeric:tabular-nums;}
 .phone-island{width:90px;height:24px;border-radius:20px;background:#1a1a1a;position:absolute;left:50%;transform:translateX(-50%);top:8px;}
-.phone-status-right{display:flex;align-items:center;gap:5px;color:#1a1a1a;}
+.phone-status-right{display:flex;align-items:center;gap:5px;}
 .phone-battery{width:20px;height:10px;border:1.2px solid #1a1a1a;border-radius:2px;position:relative;}
 .phone-battery::after{content:'';position:absolute;right:-3px;top:2.5px;width:1.5px;height:4px;background:#1a1a1a;border-radius:0 1px 1px 0;}
 .phone-battery-fill{width:75%;height:100%;background:#1a1a1a;border-radius:1px;}
-.line-nav{display:flex;align-items:center;justify-content:space-between;padding:10px 14px 10px;background:rgba(78,130,95,0.85);backdrop-filter:blur(12px);}
-.line-nav-left{padding:4px 6px;cursor:pointer;}
+.line-nav{display:flex;align-items:center;padding:10px 14px;background:rgba(78,130,95,0.85);backdrop-filter:blur(12px);}
+.line-nav-left{padding:4px 6px;flex-shrink:0;}
 .line-nav-center{flex:1;text-align:center;}
 .line-nav-name{font-size:15px;font-weight:700;color:#fff;}
-.line-nav-right{padding:4px 6px;}
-.line-chat{background:linear-gradient(170deg,#8FBCBB 0%,#7EB0A8 30%,#6DA47E 100%);min-height:420px;padding:10px 10px 6px;position:relative;background-image:radial-gradient(circle at 20% 80%, rgba(255,255,255,0.03) 0%, transparent 50%),radial-gradient(circle at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 50%);}
-.line-date-pill{display:block;width:fit-content;margin:6px auto 14px;font-size:10px;color:rgba(255,255,255,0.7);background:rgba(0,0,0,0.12);padding:3px 12px;border-radius:12px;text-align:center;}
+.line-chat{background:linear-gradient(170deg,#8FBCBB 0%,#7EB0A8 30%,#6DA47E 100%);min-height:400px;padding:10px 10px 6px;}
+.line-date-pill{display:block;width:fit-content;margin:6px auto 14px;font-size:10px;color:rgba(255,255,255,0.7);background:rgba(0,0,0,0.12);padding:3px 12px;border-radius:12px;}
 .line-msg-row{display:flex;align-items:flex-start;gap:8px;}
-.line-avatar-circle{width:32px;height:32px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#5a8a6a,#4a7a5a);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 3px rgba(0,0,0,0.15);}
+.line-avatar-circle{width:32px;height:32px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#5a8a6a,#4a7a5a);display:flex;align-items:center;justify-content:center;}
 .line-msg-col{flex:1;min-width:0;}
 .line-sender{font-size:10px;color:rgba(255,255,255,0.65);margin-bottom:3px;margin-left:2px;}
 .line-bubble-wrap{display:flex;align-items:flex-end;gap:5px;}
-.line-bubble-body{background:#fff;border-radius:0 16px 16px 16px;padding:14px 14px;font-size:12.5px;color:#1a1a1a;line-height:1.6;box-shadow:0 1px 4px rgba(0,0,0,0.06);flex:1;min-width:0;position:relative;}
-.line-read-time{display:flex;flex-direction:column;align-items:flex-end;font-size:9px;color:rgba(255,255,255,0.55);white-space:nowrap;flex-shrink:0;gap:1px;padding-bottom:2px;}
+.line-bubble-body{background:#fff;border-radius:0 16px 16px 16px;padding:14px;font-size:12.5px;color:#1a1a1a;line-height:1.6;box-shadow:0 1px 4px rgba(0,0,0,0.06);flex:1;}
+.line-read-time{display:flex;flex-direction:column;align-items:flex-end;font-size:9px;color:rgba(255,255,255,0.55);white-space:nowrap;gap:1px;padding-bottom:2px;}
 .line-read{color:rgba(255,255,255,0.45);font-size:8px;}
-.line-input-bar{display:flex;align-items:center;gap:8px;padding:8px 10px 8px;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-top:1px solid rgba(0,0,0,0.06);}
+.line-input-bar{display:flex;align-items:center;gap:8px;padding:8px 10px;background:rgba(255,255,255,0.92);border-top:1px solid rgba(0,0,0,0.06);}
 .line-input-plus{width:28px;height:28px;border-radius:50%;background:#e8e8e6;color:#888;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:300;flex-shrink:0;}
 .line-input-field{flex:1;padding:7px 14px;border-radius:20px;background:#f0f0ee;font-size:12px;color:#bbb;}
-.line-input-mic{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .phone-home-bar{padding:6px 0 10px;background:rgba(255,255,255,0.92);display:flex;justify-content:center;}
 .phone-home-indicator{width:100px;height:4px;border-radius:4px;background:rgba(0,0,0,0.2);}
-
 .lb-head{font-weight:700;font-size:14px;color:#1a1a1a;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #eee;}
 .lb-greet{font-size:12px;color:#888;margin-bottom:10px;}
-.lb-item{padding:8px 10px;background:#f8f8f6;border-radius:8px;margin-bottom:6px;border-left:3px solid #1a7a42;}
-.lb-item--warn{border-left-color:#b8860b;background:#fef9ee;}
-.lb-item-title{font-size:12px;font-weight:500;color:#1a1a1a;}
-.lb-item-meta{font-size:10px;color:#999;margin-top:3px;}
-.lb-item-alert{color:#b8860b;font-weight:600;}
-.lb-more{font-size:10px;color:#bbb;text-align:center;margin:8px 0;}
+.lb-line-item{display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding:5px 8px;background:#f8f8f6;border-radius:6px;margin-bottom:3px;border-left:3px solid #3a8a48;}
+.lb-line-item--warn{border-left-color:#b8860b;background:#fef9ee;}
+.lb-line-title{font-size:11px;font-weight:500;color:#1a1a1a;flex:1;min-width:0;line-height:1.5;}
+.lb-line-days{font-size:9px;font-weight:700;white-space:nowrap;flex-shrink:0;font-variant-numeric:tabular-nums;}
 .lb-suggest{background:#f8f6ff;border-radius:8px;padding:10px;margin-bottom:10px;border-left:3px solid #6b5ec4;}
 .lb-suggest-label{font-size:10px;color:#6b5ec4;font-weight:700;margin-bottom:2px;}
 .lb-suggest-text{font-size:11px;color:#555;line-height:1.5;}
@@ -938,47 +674,40 @@ ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
 .lb-btn{flex:1;text-align:center;padding:8px 0;border-radius:8px;background:#f0f0ee;color:#666;font-size:11px;font-weight:600;}
 .lb-btn--primary{background:#4a7048;color:#fff;}
 
-/* LINE compact item */
-.lb-line-item{display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding:5px 8px;background:#f8f8f6;border-radius:6px;margin-bottom:3px;border-left:3px solid #1a7a42;}
-.lb-line-item--warn{border-left-color:#b8860b;background:#fef9ee;}
-.lb-line-title{font-size:11px;font-weight:500;color:#1a1a1a;flex:1;min-width:0;line-height:1.5;}
-.lb-line-days{font-size:9px;font-weight:700;white-space:nowrap;flex-shrink:0;font-variant-numeric:tabular-nums;}
-
-/* ═══ Help Trigger Button ═══ */
-.help-trigger{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;border:1px solid var(--surface-3);background:var(--surface-2);cursor:pointer;color:var(--ink-3);transition:all 0.15s;flex-shrink:0;}
-.help-trigger:hover{border-color:var(--ink-5);background:var(--surface-3);color:var(--ink);}
+/* ═══ Footer ═══ */
+.footer{border-top:var(--border-thick);padding:16px 0;transition:border-color 0.4s;}
+.footer-inner{display:flex;justify-content:space-between;font-size:9px;color:var(--ink-4);letter-spacing:2px;font-family:var(--font-sans);}
 
 /* ═══ Help Modal ═══ */
-.help-modal{background:var(--surface);border-radius:20px;max-width:520px;width:100%;max-height:85vh;box-shadow:var(--shadow-lg);animation:fadeIn 0.25s ease;transition:background 0.3s;display:flex;flex-direction:column;overflow:hidden;}
-.help-modal-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px 16px;border-bottom:1px solid var(--surface-3);}
-.help-modal-title{font-size:17px;font-weight:800;color:var(--ink);}
-.help-tabs{display:flex;gap:2px;padding:12px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;border-bottom:1px solid var(--surface-3);flex-shrink:0;}
-.help-tab{display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 10px;border-radius:10px;border:none;background:transparent;cursor:pointer;font-family:var(--font);transition:all 0.15s;flex-shrink:0;min-width:64px;}
+.help-modal{background:var(--card);border-radius:var(--radius-lg);max-width:520px;width:100%;max-height:85vh;box-shadow:var(--shadow-lg);animation:fadeIn 0.25s ease;display:flex;flex-direction:column;overflow:hidden;border:var(--border-thin);transition:background 0.4s;}
+.help-modal-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px 16px;border-bottom:var(--border-thin);}
+.help-modal-title{font-size:17px;font-weight:800;color:var(--ink);font-family:var(--font-sans);}
+.help-tabs{display:flex;gap:2px;padding:12px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;border-bottom:var(--border-thin);flex-shrink:0;}
+.help-tab{display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 10px;border-radius:8px;border:none;background:transparent;cursor:pointer;font-family:var(--font-sans);transition:all 0.15s;flex-shrink:0;min-width:64px;}
 .help-tab:hover{background:var(--surface-2);}
-.help-tab--active{background:var(--green-light);box-shadow:inset 0 0 0 1px var(--green-muted);}
+.help-tab--active{background:var(--accent-light);box-shadow:inset 0 0 0 1px var(--accent-muted);}
 .help-tab-icon{font-size:18px;line-height:1;}
 .help-tab-label{font-size:9px;font-weight:600;color:var(--ink-3);white-space:nowrap;line-height:1.2;}
-.help-tab--active .help-tab-label{color:var(--green);font-weight:700;}
+.help-tab--active .help-tab-label{color:var(--accent);font-weight:700;}
 .help-content{flex:1;overflow-y:auto;padding:20px 24px;-webkit-overflow-scrolling:touch;}
-.help-section{}
 .help-text{font-size:13px;color:var(--ink-2);line-height:1.75;}
-.help-box{background:var(--surface-2);border:1px solid var(--surface-3);border-radius:12px;padding:14px 16px;transition:background 0.3s,border-color 0.3s;}
-.help-box-title{font-size:11px;font-weight:800;color:var(--ink-3);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;}
+.help-box{background:var(--surface-2);border:var(--border-thin);border-radius:var(--radius);padding:14px 16px;transition:background 0.4s;}
+.help-box-title{font-size:11px;font-weight:800;color:var(--ink-3);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;font-family:var(--font-sans);}
 .help-box-item{display:flex;align-items:baseline;gap:8px;font-size:12px;color:var(--ink-2);line-height:1.6;padding:5px 0;}
 .help-box-item+.help-box-item{border-top:1px solid var(--surface-3);}
-.help-badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;background:var(--surface-3);color:var(--ink-2);white-space:nowrap;flex-shrink:0;}
-.help-chip{display:inline-flex;align-items:center;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;white-space:nowrap;flex-shrink:0;}
+.help-badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;background:var(--surface-3);color:var(--ink-2);white-space:nowrap;flex-shrink:0;font-family:var(--font-sans);}
+.help-chip{display:inline-flex;align-items:center;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;white-space:nowrap;flex-shrink:0;font-family:var(--font-sans);}
 .help-chip--amber{background:var(--amber-light);color:var(--amber);}
 .help-chip--red{background:var(--red-light);color:var(--red);}
 .help-note{font-size:11px;color:var(--ink-4);margin-top:8px;font-style:italic;}
-.help-footer{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-top:1px solid var(--surface-3);flex-shrink:0;}
+.help-footer{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-top:var(--border-thin);flex-shrink:0;}
 .help-dots{display:flex;gap:6px;}
 .help-dot{width:7px;height:7px;border-radius:50%;background:var(--surface-3);cursor:pointer;transition:all 0.15s;}
-.help-dot--active{background:var(--green);transform:scale(1.2);}
+.help-dot--active{background:var(--accent);transform:scale(1.2);}
 .help-nav-btns{display:flex;gap:8px;}
-.help-nav-btn{padding:7px 16px;border-radius:8px;border:1px solid var(--surface-3);background:var(--surface);color:var(--ink-2);font-size:12px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all 0.15s;}
-.help-nav-btn:hover{background:var(--surface-2);border-color:var(--ink-5);}
-.help-nav-btn--primary{background:var(--green);color:#fff;border-color:var(--green);}
+.help-nav-btn{padding:7px 16px;border-radius:6px;border:var(--border-thin);background:transparent;color:var(--ink-2);font-size:12px;font-weight:600;cursor:pointer;font-family:var(--font-sans);transition:all 0.15s;}
+.help-nav-btn:hover{background:var(--surface-2);border-color:var(--ink-4);}
+.help-nav-btn--primary{background:var(--accent);color:#fff;border-color:var(--accent);}
 .help-nav-btn--primary:hover{opacity:0.9;}
 </style>
 </body>
